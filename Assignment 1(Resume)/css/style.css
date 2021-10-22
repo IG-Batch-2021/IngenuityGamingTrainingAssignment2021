@@ -67,14 +67,17 @@ body{
     margin: 3px;
     padding: 5px 8px;
 }
-
+@media only screen and (orientation: portrait) and (max-width: 750px) {
+    .main .nav h2 {
+        display: none
+    }
+}
 /* ------------------------------------------------------------ */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 #about {
     padding: 12px;
-    /* background-color: rgb(36, 35, 35); */
     margin: 22px;
-    height: 55vh;
+    min-height: 55vh;
 }
 .about .head {
     text-align: center;
@@ -89,14 +92,32 @@ body{
     margin: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
 }
 .abt-main .img img {
     border-radius: 100px;
 }
-.about-text {
 
+
+@media only screen and (orientation: portrait) and (max-width: 700px) {
+    #about {
+        margin: 0;
+        padding: 0;
+    }
+    .about-text {
+        font-size: small;
+    }
 }
+@media only screen and (orientation: portrait) and (max-width: 950px) {
+    .abt-main {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .img img {
+        margin: 10px 90px;
+    }
+    
+}
+
 
 
 
@@ -118,22 +139,22 @@ body{
     text-align: center;
     margin: 22px;
 }
-hr {;
+hr {
     margin: auto;
     width: 2vw;
 }
-.cards {
+.skills .cards {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 32px;
 }
-.row1, .row2 {
+.skills .row1, .skills .row2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-.card {
+.skills .card {
     border-radius: 20px;
     background:rgb(0, 162, 255);
     padding: 12px 10px 20px 10px;
@@ -158,11 +179,26 @@ hr {;
     margin: 22px;
     padding: 35px 0;
 }
+.project .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.project .cards .row1, .project .cards .row2, .project .cards .row3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 .project .card {
     border-radius: 20px;
     background:rgb(0, 247, 255);
     padding: 12px 10px 20px 10px;
     margin: 10px 25px;
+}
+.project .cards .row {
+
+    display: flex;
+    flex-direction: column;
 }
 .project .cards .card a {
     text-decoration: none;
@@ -174,6 +210,14 @@ hr {;
     width: 150px;
 }
 
+
+@media only screen and (orientation: portrait) and (max-width: 810px) {
+    .project .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
 
 
 
@@ -198,7 +242,8 @@ hr {;
 }
 .sap {
     display: flex;
-    flex-direction: row;justify-content: center;
+    flex-direction: row;
+    justify-content: center;
     padding: 22px;
 }
 .sap .left {
@@ -245,6 +290,21 @@ hr {;
 }
 
 
+@media only screen and (orientation: portrait) and (max-width: 700px) {
+    .sap {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .sap .left {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 12px;
+    }
+}
+
+
 footer {
     background: black;
 }
@@ -262,4 +322,12 @@ footer p span a {
     display: flex;
     justify-content: end;
     padding: 0px 22px;
+}
+
+
+@media only screen and (orientation: portrait) and (max-width: 600px) {
+    .cards .row1 {
+        display: flex;
+        flex-direction: row;
+    }
 }
