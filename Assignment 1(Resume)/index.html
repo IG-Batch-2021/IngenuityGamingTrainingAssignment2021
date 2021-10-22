@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Resume</title>
 </head>
 <body>
     <div class="container">
-        <section class="main">
+        <section class="main" id="home">
             <div class="nav">
                 <h2>Portfolio</h2>
                 <div class="navBar">
@@ -86,25 +87,30 @@
 
         <!-- contact section-->
         <section class="contact" id="contact">
-            <h1>Contact me</h1>
+            <h1>&nbsp; Contact me &nbsp;</h1>
             <h5>you can contact me on these plateform.</h5>
             <div class="sap">
                 <div class="left">
-                    <a href="www.github.com/sksleter">GitHub</a>
+                    <a href="https://www.github.com/sksketer" target="_blank">GitHub</a>
                     <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJfsdQNmnBDDhgGSQZnKBRPwVMxdVTZczmsCZPgVjvRzBbsHnKjjMbzWDbKgshKHrbwLNqB" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>E-mail</span></a>
-                    <a href="www.instagram.com/sketeramrit"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+                    <a href="https://www.instagram.com/sketeramrit" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
                     <a href="https://twitter.com/Sketer03566588" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i><span>Twitter</span></a>
                 </div>
                 <div class="right">
                     <form action="getMessage.php" method="post">
-                        <input type="username" id="name" placeholder="Username" required> <br>
+                        <input type="text" id="name" placeholder="Username" required> <br>
                         <textarea name="message" id="msg" placeholder="Your message" cols="30" rows="10"></textarea> <br>
-                        <input type="submit" value="Send">
+                        <input type="submit" value="Send" id="send-btn">
                     </form>
                 </div>
             </div>
         </section>
         <!-- !contact section-->
+        
+        <footer>
+            <p> copyright by <a href="www.instagram.com.sketeramrit">sketeramrit</a></p>
+            <p><span><i class='fas fa-arrow-circle-up' style='font-size:36px; color:white'></i></span></p>
+        </footer>
 
 
     </div>
