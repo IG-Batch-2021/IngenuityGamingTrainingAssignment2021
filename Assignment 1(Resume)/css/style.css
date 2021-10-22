@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Merienda One', cursive;
+    scroll-behavior: smooth;
 }
 body{
     background-color: lightgray;
@@ -65,4 +66,71 @@ body{
     background-color: rgb(0, 162, 255);
     margin: 3px;
     padding: 5px 8px;
+}
+
+.contact {
+    background-color: black;
+    color: white;
+}
+.contact h1 {
+    text-align: center;
+    padding: 12px;
+    font-size: 45px;
+    text-decoration: double underline;
+}
+.contact h5 {
+    text-align: center;
+    font-size: 15px;
+}
+.sap {
+    display: flex;
+    flex-direction: row;justify-content: center;
+    padding: 22px;
+}
+.sap .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.sap .left a {
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+}
+.sap .right form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sap .right form #name, .sap .right form textarea{
+    background: gray;
+    border: none;
+    outline: none;
+    padding: 8px 18px;
+    color: white;
+    margin: 8px;
+    min-width: 540px;
+    border-radius: 0px 20px 0px 20px;
+}
+#send-btn {
+    background: cyan;
+    padding: 8px 15px;
+    width: 150px;
+    border: navajowhite;
+    outline: none;
+    cursor: pointer;
+    margin: 0 50% 0 35%;
+    border-radius: 20px;
+}
+footer {
+    background: black;
+}
+footer p {
+    text-align: center;
+    color: cyan;
+    padding: 10px 0;
+}
+footer p a{
+    color: cyan;
+    cursor: pointer;
 }
