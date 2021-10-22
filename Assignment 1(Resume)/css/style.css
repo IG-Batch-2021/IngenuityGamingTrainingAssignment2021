@@ -6,7 +6,7 @@
     scroll-behavior: smooth;
 }
 body{
-    background-color: lightgray;
+    background: linear-gradient(180deg, rgb(18, 17, 26), rgb(31, 41, 47));
 }
 .container {
     
@@ -68,6 +68,107 @@ body{
     padding: 5px 8px;
 }
 
+/* ------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+#about {
+    padding: 12px;
+    background-color: rgb(36, 35, 35);
+    margin: 22px;
+}
+.about .head {
+    text-align: center;
+    font-size: 45px;
+    color: rgb(155, 255, 255);
+    /* font-family: 'Fjalla One', sans-serif; */
+}
+.abt-main {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.about-text {
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------------ */
+
+.skills {
+    background: rgb(0, 6, 37);
+    margin: 22px;
+}
+.skills h1, .project h1 {
+    color: white;
+    font-size: 45px;
+    text-align: center;
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.row1, .row2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.card {
+    border-radius: 20px;
+    background:rgb(0, 162, 255);
+    padding: 12px 10px 20px 10px;
+    margin: 10px 25px;
+}
+.card img {
+    display: flex;
+    margin: auto;
+    border-radius: 20px;
+}
+.card #skillText, .card #projectText {
+    text-align: center;
+}
+.card #star {
+    display: flex;
+    justify-content: center;
+    color: rgb(230, 176, 2);
+}
+
+.project {
+    background: rgb(11, 202, 154);
+    margin: 22px;
+}
+.project .card {
+    border-radius: 20px;
+    background:rgb(0, 247, 255);
+    padding: 12px 10px 20px 10px;
+    margin: 10px 25px;
+}
+.project .cards .card a {
+    text-decoration: none;
+}
+.project .card #star {
+    color: rgb(246, 99, 0);
+}
+.project .cards .card a img:hover {
+    width: 150px;
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
 .contact {
     background-color: black;
     color: white;
@@ -103,11 +204,11 @@ body{
     justify-content: center;
 }
 .sap .right form #name, .sap .right form textarea{
-    background: gray;
+    background: rgb(194, 194, 194);
     border: none;
     outline: none;
     padding: 8px 18px;
-    color: white;
+    color: rgb(0, 0, 0);
     margin: 8px;
     min-width: 540px;
     border-radius: 0px 20px 0px 20px;
@@ -121,7 +222,16 @@ body{
     cursor: pointer;
     margin: 0 50% 0 35%;
     border-radius: 20px;
+    border: 2px solid cyan;
+    font-weight: bold;
 }
+#send-btn:hover {
+    background: transparent;
+    color: cyan;
+    border: 2px solid cyan;
+}
+
+
 footer {
     background: black;
 }
@@ -133,4 +243,10 @@ footer p {
 footer p a{
     color: cyan;
     cursor: pointer;
+}
+footer p span a {
+    color: white;
+    display: flex;
+    justify-content: end;
+    padding: 0px 22px;
 }
