@@ -70,6 +70,18 @@ body {
     font-size: 65px;
     font-family: 'Qahiri', sans-serif;
 }
+.pos {
+    position: relative;
+}
+#count {
+    color: white;
+    background-color: rgb(63, 63, 63);
+    height: 25px; width: 25px;
+    padding: 2px 1px 0px 1px;
+    border-radius: 50%;
+    position: absolute;
+    top: -1; right: 0;
+}
 #playbtn {
     color: white;
     background-color: white;
