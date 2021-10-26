@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Qahiri&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background: linear-gradient(360deg, darkblue, lightblue);
+    height: 100vh;
+}
+.heading h1 {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Rampart One', cursive;
+    font-size: 45px;
+    padding-top: 12px;
+}
+.box {
+    width: 60%;
+    margin: auto;
+    margin-top: 180px;
+    padding: 10px 18px;
+    border: 5px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+.box #rangeHeading {
+    color: white;
+    font-weight: bold;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    font-size: xx-large;
+    padding: 10px 0px 3px 0px;
+    font-family: 'Play', sans-serif;
+}
+.box #small {
+    color: white;
+    font-size: small;
+    letter-spacing: 5px;
+    margin: 3px 0px;
+    padding: 2px 5px;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.box .range {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 18px 0px 5px 0px;
+}
+.card {
+    margin: 2px;
+    width: 80px;
+    height: 80px;
+    color: black;
+    background-color: white;
+    padding: 0px 0px;
+    text-align: center;
+    border-radius: 20px;
+    border: 2px solid white;
+    font-size: 65px;
+    font-family: 'Qahiri', sans-serif;
+}
+#playbtn {
+    color: white;
+    background-color: white;
+    border: 2px solid white;
+    background: transparent;
+    border-radius: 20px;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+#playbtn:hover {
+    width: 200px;
+    color: blue;
+    background-color: white;
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
+.box .result {
+    margin: 22px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
