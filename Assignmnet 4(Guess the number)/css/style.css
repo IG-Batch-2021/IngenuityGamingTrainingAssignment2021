@@ -7,10 +7,13 @@
     margin: 0;
     box-sizing: border-box;
 }
+body {
+    background-color: rgb(1, 1, 255);
+}
 
 .container {
-    background: linear-gradient(360deg, darkblue, lightblue);
-    height: 100vh;
+    background: linear-gradient(360deg, transparent, white);
+    height: 100vh; 
 }
 .heading h1 {
     text-align: center;
@@ -56,11 +59,11 @@
 }
 .card {
     margin: 2px;
-    width: 80px;
-    height: 80px;
+    width: 200px;
+    height: 80px;;
     color: black;
     background-color: white;
-    padding: 0px 0px;
+    padding: 8px 18px;
     text-align: center;
     border-radius: 20px;
     border: 2px solid white;
