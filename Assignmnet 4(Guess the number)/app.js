@@ -6,8 +6,12 @@ const one = document.querySelector('#one');
 const result = document.querySelector("#result");
 
 const btn = document.querySelector("#playbtn");
+const countAttempt = document.querySelector('#count');
+var count = 0;
 
 btn.addEventListener('click', function() {
+    count++;
+    countAttempt.innerHTML = count;
     var userNumber = one.value;
 
     result.innerHTML = "";
