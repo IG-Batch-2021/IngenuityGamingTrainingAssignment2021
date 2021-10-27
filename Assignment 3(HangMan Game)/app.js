@@ -1,9 +1,7 @@
-var btn = document.getElementsByClassName('card');
-var input = "Key press is: ";
+const btnA = document.getElementById('cardA');
+var input = "key is press: ";
 
-btn.onClick(() =>{
-    input.concat(btn.value);
-    console.log(input);
-});
-
-// console.log(input)
+btnA.addEventListener("click", function() {
+    input += "A ";
+    console.log(input)
+})
