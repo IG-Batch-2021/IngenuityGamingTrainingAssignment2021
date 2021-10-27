@@ -17,6 +17,8 @@ body {
     justify-content: space-evenly;
     align-items: center;
 }
+.container .hangman {
+}
 .userInput #userGuess {
     border: none;
     outline: none;
