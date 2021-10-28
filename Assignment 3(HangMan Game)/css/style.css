@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Festive&family=Irish+Grover&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +20,18 @@ body {
     justify-content: space-evenly;
     align-items: center;
 }
+.heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+.heading h1 {
+    font-family: 'Irish Grover', cursive;
+    font-size: 45px;
+}
+.heading h3 {
+    font-family: 'Festive', cursive;
+    font-size: large;
+}
 .container .hangman .box {
     margin-top: -55px;
     /* background-color: rgb(248, 192, 192); */
@@ -24,7 +39,7 @@ body {
     height: 150px;
     border-top: 2px solid black;
     border-left: 2px solid black;
-    /* border-bottom: 5px solid black; */
+    /* border-right: 5px solid black; */
     position: relative;
 }
 #face {
@@ -69,13 +84,22 @@ body {
     bottom: 0px;
     right: -50px;
 }
+.userInput #yourGuess {
+    font-weight: bold;
+    color: white;
+    background-color: rgb(173, 173, 250);
+    padding: 8px 12px;
+    border-radius: 20px;
+}
 .userInput #userGuess {
     border: none;
     outline: none;
     padding: 10px 15px;
     font-size: large;
     letter-spacing: 5px;
-    border-bottom: 5px dashed rgb(155, 141, 141);
+    /* background-color: yellow; */
+    text-align: center;
+    /* border-bottom: 5px dashed rgb(155, 141, 141); */
 }
 .alphabate {
     display: flex;
@@ -108,4 +132,17 @@ body {
 .top, .down {
     display: flex;
     flex-direction: row;
+}
+.last button {
+    margin: 10px 0;
+    padding: 5px 12px;
+    border: 3px solid rgb(11, 11, 218);
+    color: rgb(11, 11, 218);
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.last button:hover {
+    background-color: rgb(11, 11, 218);
+    color: white;
 }
