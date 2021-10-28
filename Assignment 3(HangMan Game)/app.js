@@ -1,5 +1,11 @@
 var input = "";
-const words = ["Nitin", "Narendra","Sachin", "Deepak", "Abhishek", "Sumit", "Amrit", "Balram", "Aman", "Pranjal", "Deepali", "Kanak", ""];
+const words = ["java", "c", "php", "html", "css", "kotlin", "python", "go", "javascript", "react", "node", "c++", "c#", "swift", "r", "typescript", "sql", "ruby", "perl", "dart", "xml",];
+console.log(words.length)
+const max = 21;
+const min = 0;
+const randomNumber = Math.floor(Math.random()*(max - min + 1) + min);
+// var word = words[randomNumber];
+console.log(words[randomNumber])
 var word = "Ingenuitygaming"
 word = word.toUpperCase();
 let val = "";
