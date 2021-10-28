@@ -1,13 +1,22 @@
-var input = "";
 const words = ["java", "c", "php", "html", "css", "kotlin", "python", "go", "javascript", "react", "node", "c++", "c#", "swift", "r", "typescript", "sql", "ruby", "perl", "dart", "xml",];
-console.log(words.length)
+
 const max = 21;
 const min = 0;
 const randomNumber = Math.floor(Math.random()*(max - min + 1) + min);
-// var word = words[randomNumber];
-console.log(words[randomNumber])
-var word = "Ingenuitygaming"
+
+var input = "";
+var word = words[randomNumber];
+// var word = "Ingenuitygaming"
+// console.log(words[randomNumber])
 word = word.toUpperCase();
+
+var placeholderLength = word.length;
+var placeholderText = "";
+for(let i=0; i<placeholderLength; i++) {
+placeholderText += "_";
+}
+document.getElementById('userGuess').placeholder = placeholderText;
+
 let val = "";
 for(let i=0; i<word.length; i++) {
     val += "_";
