@@ -17,7 +17,57 @@ body {
     justify-content: space-evenly;
     align-items: center;
 }
-.container .hangman {
+.container .hangman .box {
+    margin-top: -55px;
+    /* background-color: rgb(248, 192, 192); */
+    width: 65px;
+    height: 150px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    /* border-bottom: 5px solid black; */
+    position: relative;
+}
+#face {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid lightgray;
+    position: absolute;
+    right: -22px;
+}
+#hand {
+    width: 100px;
+    height: 3px;
+    border: 3px solid lightgray;
+    position: absolute;
+    top: 48px;
+    right: -45px;
+}
+#legs {
+    width: 50px;
+    height: 50px;
+    border-top: 5px solid lightgray;
+    border-left: 5px solid lightgray;
+    border-right: 5px solid lightgray;
+    position: absolute;
+    bottom: 5px;
+    right: -23px;
+}
+#body {
+    width: 3px;
+    height: 45px;
+    border: 3px solid lightgray;
+    position: absolute;
+    top: 50px;
+    right: 0px;
+}
+#bottom {
+    width: 180px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    bottom: 0px;
+    right: -50px;
 }
 .userInput #userGuess {
     border: none;
