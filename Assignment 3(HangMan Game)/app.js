@@ -12,9 +12,11 @@ word = word.toUpperCase();
 
 var placeholderLength = word.length;
 var placeholderText = "";
+
 for(let i=0; i<placeholderLength; i++) {
-placeholderText += "_";
+    placeholderText += "_";
 }
+
 document.getElementById('userGuess').placeholder = placeholderText;
 
 let val = "";
