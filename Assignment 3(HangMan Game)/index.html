@@ -9,6 +9,10 @@
 </head>
 <body>
     <div class="container">
+        <div class="heading">
+            <h1>HangMan</h1>
+            <h3>The Game</h3>
+        </div>
         <div class="hangman"> 
             <div class="box">
                 <div id="face"></div>
@@ -19,7 +23,8 @@
             </div> 
         </div>
         <div class="userInput">
-            <input type="text" name="userGuess" id="userGuess" placeholder="_ _ _ _ _ _ _ _ _ _ _"> 
+            <label for="userGuess" id="yourGuess">Your Guesses: </label>
+            <input type="text" name="userGuess" id="userGuess" placeholder=" _ _ _ _ _ _ _ _ _" value=""> 
         </div>
         <div class="alphabate">
             <div class="top">
@@ -51,6 +56,9 @@
                 <button type="submit" class="card" id="cardX" value="X">X</button>
                 <button type="submit" class="card" id="cardY" value="Y">Y</button>
                 <button type="submit" class="card" id="cardZ" value="Z">Z</button>
+            </div>
+            <div class="last">
+                <button type="submit">Restart</button>
             </div>
         </div>
     </div>
