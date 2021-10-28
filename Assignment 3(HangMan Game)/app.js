@@ -5,9 +5,10 @@ const min = 0;
 const randomNumber = Math.floor(Math.random()*(max - min + 1) + min);
 
 var input = "";
-var word = words[randomNumber];
+// var word = words[randomNumber];
+var word = "php";
 // var word = "Ingenuitygaming"
-// console.log(words[randomNumber])
+console.log(word)
 word = word.toUpperCase();
 
 var placeholderLength = word.length;
@@ -27,12 +28,13 @@ for(let i=0; i<word.length; i++) {
 let btnArr = [];
 let countWrong = 0;
 
+// All Buttons
 for(let i = 65; i <= 90; i++) {
     const btn = document.getElementById(`card${String.fromCharCode(i)}`);
     btn.addEventListener("click", onAlphabetClick)
     btnArr.push(btn);
 }
-console.log(btnArr)
+// console.log(btnArr)
 
 
 function onAlphabetClick(e) {
@@ -43,6 +45,10 @@ function onAlphabetClick(e) {
 }
 
 function trueDisableBtn(id) {
+    if(input.length == word.lenght) {
+        console.log("you win");
+        alert("Congress!, you WIN");
+    }
     document.getElementById(id).style = "border-color: green; background-color: lightgreen; color: green;";
 }
 function falseDisableBtn(id) {
