@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Festive&family=Irish+Grover&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
 
 * {
     margin: 0;
@@ -84,6 +85,9 @@ body {
     bottom: 0px;
     right: -50px;
 }
+.userInput {
+    display: block;
+}
 .userInput #yourGuess {
     font-weight: bold;
     color: white;
@@ -100,6 +104,7 @@ body {
     /* background-color: yellow; */
     text-align: center;
     /* border-bottom: 5px dashed rgb(155, 141, 141); */
+    pointer-events: none;
 }
 .alphabate {
     display: flex;
@@ -128,6 +133,16 @@ body {
     background-color: transparent;
     color: rgb(100, 110, 225);
     font-size: larger;
+}
+#win {
+    /* background-color: rgb(165, 252, 237); */
+    padding: 20px;
+    font-size: 45px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: green;
+    font-family: 'Rampart One', cursive;
+    display: none;
 }
 .top, .down {
     display: flex;
