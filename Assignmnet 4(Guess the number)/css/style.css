@@ -82,7 +82,7 @@ body {
     position: absolute;
     top: -1; right: 0;
 }
-#playbtn {
+#playbtn, #resetbtn {
     color: white;
     background-color: white;
     border: 2px solid white;
@@ -93,8 +93,7 @@ body {
     cursor: pointer;
     padding: 5px 15px;
 }
-#playbtn:hover {
-    width: 200px;
+#playbtn:hover, #resetbtn:hover {
     color: blue;
     background-color: white;
     -webkit-transition: background-color 1000ms linear;
