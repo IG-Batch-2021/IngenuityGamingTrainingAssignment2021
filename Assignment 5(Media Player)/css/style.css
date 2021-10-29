@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=WindSong&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
+* { padding: 0; margin: 0;}
+.container {
+    width: 100%;
+    /* background: radial-gradient(rgb(111, 177, 252), rgb(103, 245, 255),rgb(0, 238, 255)); */
+    background-color: black;
+    /* background-image: url("img/background.jpg"); */
+    height: 100vh;
+}
+.heading {
+    font-family: 'Shojumaru', cursive;
+    font-weight: bold;
+    font-size: 48px;
+    text-align: center;
+    color: white;
+}
+.main {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.neonBall {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow:
+      inset 0 0 50px #fff,
+      inset 20px 0 80px #f0f,
+      inset -20px 0 80px #0ff,
+      inset 20px 0 300px #f0f,
+      inset -20px 0 300px #0ff,
+      0 0 50px #fff,
+      -10px 0 80px #f0f,
+      10px 0 80px #0ff;
+    animation-name: size;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes size {
+    0% {width: 300px; height: 300px;}
+    50% {width: 100px; height: 100px;}
+    100% {width: 300px; height: 300px;}
+}
+#ball1 {
+}
+#ball2 {
+
+}
+.music-card {
+    width: 320px;
+    height: 65vh;
+    margin: 20px auto 0;
+    border-radius: 20px;
+    border: 5px solid black;
+    padding: 45px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: linear-gradient(360deg, black, darkblue);
+    box-shadow: inset 0px 0px 3px 3px white, 0px 0px 25px 5px rgb(19, 0, 128);
+}
+.songName {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'WindSong', cursive;
+    text-decoration: underline;
+    letter-spacing: 3px;
+    text-align: center;
+    color: white;
+}
+.img, #img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.493);
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(90deg);}
+    50% {transform: rotate(180deg);}
+    75% {transform: rotate(270deg);}
+    100% {transform: rotate(360deg);}
+}
+
+/* controls */
+.controls {
+    display: flex;
+    flex-direction: column;
+}
+#time {
+    display: block;
+    margin: 10px auto;
+}
+.btns {
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    margin: 0 8px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    padding: 0 9px;
+}
+#loop {
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: normal;
+}
+#play {
+    margin: 0 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+}
+#play:hover {
+    box-shadow: 0px 0px 12px white;
+}
+.btn:hover {
+    /* box-shadow: 0px 0px 12px white; */
+    font-size: 18px;
+    padding: 0 6px;
+}
