@@ -1,16 +1,20 @@
 const words = ["java", "c", "php", "html", "css", "kotlin", "python", "go", "javascript", "react", "node", "c++", "c#", "swift", "r", "typescript", "sql", "ruby", "perl", "dart", "xml",];
-
+window.onload = () => {
+    document.getElementById('userGuess').value = "";
+}
 const max = 21;
 const min = 0;
 const randomNumber = Math.floor(Math.random()*(max - min + 1) + min);
 
 var input = "";
-// var word = words[randomNumber];
-var word = "php";
+var word = words[randomNumber];
+// var word = "php";
 // var word = "Ingenuitygaming"
 console.log(word)
 word = word.toUpperCase();
 
+var correctKey = new Audio('');
+var wrongKey = new Audio('');
 var placeholderLength = word.length;
 var placeholderText = "";
 
@@ -50,6 +54,7 @@ function trueDisableBtn(id) {
         alert("Congress!, you WIN");
     }
     document.getElementById(id).style = "border-color: green; background-color: lightgreen; color: green;";
+    // correctKey.play();
 }
 function falseDisableBtn(id) {
     if(countWrong == 4) {
@@ -58,6 +63,8 @@ function falseDisableBtn(id) {
     }
     countWrong++;
     document.getElementById(id).style = "border-color: red; background-color: rgb(252, 185, 185); color: red;";
+    // wrongKey.play();
+
     let bodyPart = "";
     switch(countWrong) {
         case 1: bodyPart = "face"; break;
@@ -76,7 +83,6 @@ function checkWord(key) {
         if(key.charAt(0) === word.charAt(i)) {
             index.push(i)
             input += key
-            // console.log("in the function")
         } else {
             input += "";
         }
@@ -87,9 +93,25 @@ function checkWord(key) {
     if(index.length > 0) check = 1; else check = 0;
     index = [];
     document.getElementById('userGuess').value = val;
+    if(checkVal(val)) {
+        console.log("You Win");
+        document.querySelector('.top').style.display = "none";
+        document.querySelector('.down').style.display = "none";
+        document.querySelector('.userInput').style.display = "none";
+        document.getElementById('win').style.display = "block";
+        
+    }
     return check;
 }
 function setCharAt(str, index, chr) {
     if(index > str.length-1) return str;
     return str.substring(0, index) + chr + str.substring(index+1);
+}
+
+function checkVal(val) {
+    for(let i=0; i<val.length; i++) {
+        if(val.charAt(i) == '_')
+        return false;
+    }
+    return true;
 }
