@@ -13,8 +13,10 @@ var word = words[randomNumber];
 console.log(word)
 word = word.toUpperCase();
 
-var correctKey = new Audio('');
-var wrongKey = new Audio('');
+var correctKey = new Audio('sound/win.mp3');
+var wrongKey = new Audio('sound/tryagain.mp3');
+var gameover = new Audio('sound/gameover.mp3');
+
 var placeholderLength = word.length;
 var placeholderText = "";
 
@@ -54,16 +56,21 @@ function trueDisableBtn(id) {
         alert("Congress!, you WIN");
     }
     document.getElementById(id).style = "border-color: green; background-color: lightgreen; color: green;";
+    document.getElementById(id).style.pointerEvents = "none";
     // correctKey.play();
 }
 function falseDisableBtn(id) {
     if(countWrong == 4) {
-        alert("Game Over");
+        const gameoverMessage = `GameOver \r\nThe word is ${word} \r\nPress ok to Restart`;
+        gameover.play();
+        alert(gameoverMessage);
+        window.location.reload();
         return;
     }
     countWrong++;
     document.getElementById(id).style = "border-color: red; background-color: rgb(252, 185, 185); color: red;";
-    // wrongKey.play();
+    document.getElementById(id).style.pointerEvents = "none";
+    wrongKey.play();
 
     let bodyPart = "";
     switch(countWrong) {
@@ -94,6 +101,7 @@ function checkWord(key) {
     index = [];
     document.getElementById('userGuess').value = val;
     if(checkVal(val)) {
+        correctKey.play();
         console.log("You Win");
         document.querySelector('.top').style.display = "none";
         document.querySelector('.down').style.display = "none";
