@@ -13,5 +13,19 @@ git clone https://github.com/IG-Batch-2021/IngenuityGamingTrainingAssignment2021
 ## Assignments Links
 You may check assignment here
 
-## License
-[MIT](https://githuv.com/sksketer)
+[Assignment 1 (Portfolio)](https://ig-batch-2021.github.io/IngenuityGamingTrainingAssignment2021/Assignment%201(Resume)/)
+
+[Assignment 2 (ToDoList)](https://ig-batch-2021.github.io/IngenuityGamingTrainingAssignment2021/Assignment%202%20(todoList)/todoList.html)
+
+[Assignment 3 (HangMan Game)](https://ig-batch-2021.github.io/IngenuityGamingTrainingAssignment2021/Assignment%203(HangMan%20Game)/)
+
+[Assignment 4 (Guess the Number)](https://ig-batch-2021.github.io/IngenuityGamingTrainingAssignment2021/Assignmnet%204(Guess%20the%20number)/)
+
+[Assignment 5 (Music Player)](https://ig-batch-2021.github.io/IngenuityGamingTrainingAssignment2021/Assignment%205(Media%20Player)/)
+
+## Social Media Links
+[GitHub](https://github.com/sksketer)
+
+[Instagram](https://instagram.com/sketeramrit)
+
+[Linkedin](https://www.linkedin.com/in/amrit-agarwal-16858b201/)
