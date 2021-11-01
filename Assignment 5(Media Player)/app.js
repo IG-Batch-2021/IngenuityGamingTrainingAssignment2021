@@ -61,12 +61,25 @@ window.onload = () => {
 }
 
 function updateTimeDuration() {
-    const timeMin = 0;
-    const timeMax = (song.duration);
-    var currTime = (song.currentTime);
-    document.getElementById('time').max = timeMax;
-    document.getElementById('time').value = currTime;
-    // console.log(timeMax+" "+currTime)
+    try {
+        const timeMin = 0;
+        const timeMax = Math.floor(song.duration);
+        var currTime = Math.floor(song.currentTime);
+        document.getElementById('time').max = timeMax;
+        document.getElementById('time').value = currTime;
+        document.getElementById('endTime').innerHTML = formateTime(Math.floor(timeMax));
+        // console.log(timeMax+" "+currTime)
+    } catch(e) {
+        console.log("Some Error occur But Handle sucessfully");
+    }
+}
+
+function formateTime (time) {
+    const min = Math.floor(time/60);
+    const sec = (time)-(min*60);
+    const formattedTime = `${min}m ${sec}s`;
+
+    return formattedTime;
 }
 
 next.addEventListener("click", function() {
@@ -111,10 +124,14 @@ function playMusic() {
     console.log("song play")
     console.log(songPlay)
     console.log(0+" "+song.currentTime+" "+song.duration)
+    volMute.style.display = "none";
+    volFull.style.display = "block"
 }
 
 pause.addEventListener("click", pauseMusic);
 function pauseMusic() {
+    volMute.style.display = "none";
+    volFull.style.display = "block"
     pause.style.display = "none"
     play.style.display = "block"
     song.pause();
