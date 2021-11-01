@@ -97,6 +97,9 @@
     display: flex;
     flex-direction: column;
 }
+.controls #time {
+    width: 80%;
+}
 #time {
     display: block;
     margin: 10px auto;
