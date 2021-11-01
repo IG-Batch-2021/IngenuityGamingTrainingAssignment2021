@@ -27,74 +27,122 @@ const songsData = [
 ]
 
 var songName = document.getElementById('songName');
-var loop = document.getElementById('loop');
 var img = document.getElementById('img');
+var timeSlot = document.getElementById('time');
+var loop = document.getElementById('loop');
 var prev = document.getElementById('prev');
 var play = document.getElementById('play');
+var pause = document.getElementById('pause');
 var next = document.getElementById('next');
+var volFull = document.getElementById('vol-full');
+var volMute = document.getElementById('vol-mute');
 
 var index = 0;
 var song;
+
 song = new Audio(songsData[index]["song-src"]);
 songName.innerText = songsData[index]["name"];
-img.src =   `img/${songsData[index]["img-src"]}`;
-song.play();
-// song.autoplay = "on";
-var checkPlayAndPause = false;
+img.src = `img/${songsData[index]["img-src"]}`;
+// song.play();
+
+var songPlay = false;
 var checkLoop = false;
 
 // console.log(songsData)
 window.onload = () => {
     if(index == 0 && checkLoop == false) {
+        setInterval(updateTimeDuration, 1);
         prev.style.pointerEvents = "none";
+        prev.style.opacity = "0.5";
+        pause.style.display = "none"
+        volMute.style.display = "none";
+        volFull.style.display = "block"
     }
 }
 
+function updateTimeDuration() {
+    const timeMin = 0;
+    const timeMax = (song.duration);
+    var currTime = (song.currentTime);
+    document.getElementById('time').max = timeMax;
+    document.getElementById('time').value = currTime;
+    // console.log(timeMax+" "+currTime)
+}
+
 next.addEventListener("click", function() {
-    song.pause();
-    song.currentTime = 0;
+    index++;
+    if(songPlay) {song.pause();} 
+    
     if(index == songsData.length-1 && checkLoop == false) {
         next.style.pointerEvents = "none";
+        next.style.opacity = "0.5"
     }
     prev.style.pointerEvents = "all";
+    prev.style.opacity = "1";
     if(index > songsData.length-1) index = 0;
     songName.innerText = songsData[index]["name"];
     img.src = `img/${songsData[index]["img-src"]}`;
     song = new Audio(songsData[index]["song-src"]);
-    song.play();
-    index++;
-    console.log(index+" in next")
+    playMusic();
 })
+
 prev.addEventListener("click", function() {
+    index--;
     if(index == 0 && checkLoop == false) {
         prev.style.pointerEvents = "none";
+        prev.style.opacity = "0.5"
     }
-    song.pause();
-    index--;
+    pauseMusic();
+    next.style.opacity = "1";
     next.style.pointerEvents = "all";
     if(index < 0) index = songsData.length-1;
     songName.innerText = songsData[index]["name"];
     img.src = `img/${songsData[index]["img-src"]}`;
     song = new Audio(songsData[index]["song-src"]);
+    playMusic();
+})
+
+play.addEventListener("click", playMusic);
+function playMusic() {
+    play.style.display = "none"
+    pause.style.display = "block"
     song.play();
-    console.log(index+" in prev")
-})
-console.log(checkPlayAndPause)
-play.addEventListener("click", function() {
-    if(checkPlayAndPause) {
-        song.pause();
-        checkPlayAndPause = false;
-    } else {
-        song.play();
-        checkPlayAndPause = true;
-    }
-    console.log(checkPlayAndPause)
-})
+    songPlay = true;
+    console.log("song play")
+    console.log(songPlay)
+    console.log(0+" "+song.currentTime+" "+song.duration)
+}
+
+pause.addEventListener("click", pauseMusic);
+function pauseMusic() {
+    pause.style.display = "none"
+    play.style.display = "block"
+    song.pause();
+    songPlay = false;
+    console.log("song pause")
+    console.log(songPlay)
+}
+
 loop.addEventListener("click", function() {
     if(checkLoop) {
         checkLoop = false;
+        loop.style.color = "white";
     } else {
         checkLoop = true;
+        loop.style.color = "rgb(122, 222, 255)";
     }
 })
 
+volFull.addEventListener("click", function() {
+    console.log("volFull is press")
+    volMute.style.display = "block";
+    volFull.style.display = "none";
+    song.volume = 0;
+});
+
+volMute.addEventListener("click", function() {
+    console.log("volMute is press");
+    volMute.style.display = "none";
+    volFull.style.display = "block";
+    song.volume = 1.0;
+});
