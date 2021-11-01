@@ -61,7 +61,7 @@ window.onload = () => {
 
 next.addEventListener("click", function() {
     index++;
-    if(songPlay) {song.pause();} else { play.style.display = "none"; pause.style.display = "block"; songPlay = true; }
+    if(songPlay) {song.pause();} 
     
     if(index == songsData.length-1 && checkLoop == false) {
         next.style.pointerEvents = "none";
@@ -73,8 +73,7 @@ next.addEventListener("click", function() {
     songName.innerText = songsData[index]["name"];
     img.src = `img/${songsData[index]["img-src"]}`;
     song = new Audio(songsData[index]["song-src"]);
-    song.play();
-    console.log(index+" in next")
+    playMusic();
 })
 
 prev.addEventListener("click", function() {
@@ -83,34 +82,38 @@ prev.addEventListener("click", function() {
         prev.style.pointerEvents = "none";
         prev.style.opacity = "0.5"
     }
-    song.pause();
+    pauseMusic();
+    // song.pause();
     next.style.opacity = "1";
     next.style.pointerEvents = "all";
     if(index < 0) index = songsData.length-1;
     songName.innerText = songsData[index]["name"];
     img.src = `img/${songsData[index]["img-src"]}`;
     song = new Audio(songsData[index]["song-src"]);
-    song.play();
-    console.log(index+" in prev")
+    playMusic();
+    // song.play();
+    // console.log(index+" in prev")
 })
 
-play.addEventListener("click", function() {
+play.addEventListener("click", playMusic);
+function playMusic() {
     play.style.display = "none"
     pause.style.display = "block"
     song.play();
     songPlay = true;
     console.log("song play")
     console.log(songPlay)
-})
+}
 
-pause.addEventListener("click", function() {
+pause.addEventListener("click", pauseMusic);
+function pauseMusic() {
     pause.style.display = "none"
     play.style.display = "block"
     song.pause();
     songPlay = false;
     console.log("song pause")
     console.log(songPlay)
-})
+}
 
 loop.addEventListener("click", function() {
     if(checkLoop) {
