@@ -51,12 +51,22 @@ var checkLoop = false;
 // console.log(songsData)
 window.onload = () => {
     if(index == 0 && checkLoop == false) {
+        setInterval(updateTimeDuration, 1);
         prev.style.pointerEvents = "none";
         prev.style.opacity = "0.5";
         pause.style.display = "none"
         volMute.style.display = "none";
         volFull.style.display = "block"
     }
+}
+
+function updateTimeDuration() {
+    const timeMin = 0;
+    const timeMax = (song.duration);
+    var currTime = (song.currentTime);
+    document.getElementById('time').max = timeMax;
+    document.getElementById('time').value = currTime;
+    // console.log(timeMax+" "+currTime)
 }
 
 next.addEventListener("click", function() {
@@ -83,7 +93,6 @@ prev.addEventListener("click", function() {
         prev.style.opacity = "0.5"
     }
     pauseMusic();
-    // song.pause();
     next.style.opacity = "1";
     next.style.pointerEvents = "all";
     if(index < 0) index = songsData.length-1;
@@ -91,8 +100,6 @@ prev.addEventListener("click", function() {
     img.src = `img/${songsData[index]["img-src"]}`;
     song = new Audio(songsData[index]["song-src"]);
     playMusic();
-    // song.play();
-    // console.log(index+" in prev")
 })
 
 play.addEventListener("click", playMusic);
@@ -103,6 +110,7 @@ function playMusic() {
     songPlay = true;
     console.log("song play")
     console.log(songPlay)
+    console.log(0+" "+song.currentTime+" "+song.duration)
 }
 
 pause.addEventListener("click", pauseMusic);
@@ -129,7 +137,7 @@ volFull.addEventListener("click", function() {
     console.log("volFull is press")
     volMute.style.display = "block";
     volFull.style.display = "none";
-    song.volume = 0.0;
+    song.volume = 0;
 });
 
 volMute.addEventListener("click", function() {
