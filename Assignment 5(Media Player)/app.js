@@ -27,19 +27,23 @@ const songsData = [
 ]
 
 var songName = document.getElementById('songName');
-var loop = document.getElementById('loop');
 var img = document.getElementById('img');
+var timeSlot = document.getElementById('time');
+var loop = document.getElementById('loop');
 var prev = document.getElementById('prev');
 var play = document.getElementById('play');
+var pause = document.getElementById('pause');
 var next = document.getElementById('next');
+var volume = document.getElementById('volume');
 
 var index = 0;
 var song;
+
 song = new Audio(songsData[index]["song-src"]);
 songName.innerText = songsData[index]["name"];
-img.src =   `img/${songsData[index]["img-src"]}`;
-song.play();
-// song.autoplay = "on";
+img.src = `img/${songsData[index]["img-src"]}`;
+// song.play();
+
 var checkPlayAndPause = false;
 var checkLoop = false;
 
@@ -51,8 +55,9 @@ window.onload = () => {
 }
 
 next.addEventListener("click", function() {
-    song.pause();
-    song.currentTime = 0;
+    checkPlayAndPause = (checkPlayAndPause == true) ? false : true;
+    song.pause()
+    console.log(checkPlayAndPause)
     if(index == songsData.length-1 && checkLoop == false) {
         next.style.pointerEvents = "none";
     }
@@ -79,17 +84,24 @@ prev.addEventListener("click", function() {
     song.play();
     console.log(index+" in prev")
 })
-console.log(checkPlayAndPause)
+
+// console.log(checkPlayAndPause)
 play.addEventListener("click", function() {
     if(checkPlayAndPause) {
         song.pause();
         checkPlayAndPause = false;
+        
     } else {
         song.play();
         checkPlayAndPause = true;
     }
     console.log(checkPlayAndPause)
 })
+
+pause.addEventListener("click", function() {
+    
+})
+
 loop.addEventListener("click", function() {
     if(checkLoop) {
         checkLoop = false;
