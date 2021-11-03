@@ -16,7 +16,7 @@
     color: white;
 }
 .main {
-    width: 80%;
+    width: 90%;
     margin: auto;
     display: flex;
     justify-content: space-around;
@@ -54,7 +54,7 @@
     margin: 20px auto 0;
     border-radius: 20px;
     border: 5px solid black;
-    padding: 45px 22px;
+    padding: 35px 22px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -69,6 +69,30 @@
     letter-spacing: 3px;
     text-align: center;
     color: white;
+    display: flex;
+    flex-direction: column;
+}
+#downloadLink {
+    color: white;
+    width: 32px;
+    font-size: 25px;
+    display: inline;
+    margin: auto;
+    margin-top: -3px;
+}
+#downloadLink:hover i {
+    color: #0ff;
+}
+#downloadText {
+    padding: 0;
+    opacity: 0;
+    margin-top: -25px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    color: #0ff;
+    text-align: center;
+    transition: ease-in-out;
 }
 .img, #img {
     width: 180px;
@@ -97,12 +121,30 @@
     display: flex;
     flex-direction: column;
 }
-.controls #time {
-    width: 80%;
+#timeslot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: lightgreen; */
+}
+.displayTime {
+    color: white;
+    font-weight: 15px;
+    display: flex;
+    align-items: center;
 }
 #time {
+    width: 80%;
     display: block;
     margin: 10px auto;
+    display: flex;
+}
+.timer {
+    display: flex;
+    justify-content: center;
+    color: white;
+    /* background-color: lightgray; */
+    margin-bottom: 12px;
 }
 .btns {
     display: flex;
