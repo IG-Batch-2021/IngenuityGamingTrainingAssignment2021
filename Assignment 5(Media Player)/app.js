@@ -27,6 +27,7 @@ const songsData = [
 ]
 
 var songName = document.getElementById('songName');
+var downloadLink = document.getElementById('downloadLink');
 var img = document.getElementById('img');
 var timeSlot = document.getElementById('time');
 var loop = document.getElementById('loop');
@@ -43,6 +44,7 @@ var song;
 song = new Audio(songsData[index]["song-src"]);
 songName.innerText = songsData[index]["name"];
 img.src = `img/${songsData[index]["img-src"]}`;
+downloadLink.href = songsData[index]["song-src"];
 // song.play();
 
 var songPlay = false;
@@ -61,12 +63,38 @@ window.onload = () => {
 }
 
 function updateTimeDuration() {
-    const timeMin = 0;
-    const timeMax = (song.duration);
-    var currTime = (song.currentTime);
-    document.getElementById('time').max = timeMax;
-    document.getElementById('time').value = currTime;
-    // console.log(timeMax+" "+currTime)
+    try {
+        const timeMin = 0;
+        const timeMax = Math.floor(song.duration);
+        var currTime = Math.floor(song.currentTime);
+        document.getElementById('startTime').innerHTML = formateCurrentTime(Math.floor(currTime))
+        document.getElementById('time').max = timeMax;
+        document.getElementById('time').value = currTime;
+        document.getElementById('endTime').innerHTML = formateTime(Math.floor(timeMax));
+        // console.log(timeMax+" "+currTime)
+    } catch(e) {
+        console.log("");
+    }
+}
+
+function formateTime (time) {
+    const min = Math.floor(time/60);
+    const sec = (time)-(min*60);
+    const formattedTime = `${min}m ${sec}s`;
+    
+    return formattedTime;
+}
+
+function formateCurrentTime(cur) {
+    const min = Math.floor(cur/60);
+    const sec = (cur)-(min*60);
+    var liveTime = "";
+    if(min == 0)
+        liveTime = `${sec}s`;
+    else
+        liveTime = `${min}m ${sec}s`;
+
+    return liveTime;
 }
 
 next.addEventListener("click", function() {
@@ -83,6 +111,7 @@ next.addEventListener("click", function() {
     songName.innerText = songsData[index]["name"];
     img.src = `img/${songsData[index]["img-src"]}`;
     song = new Audio(songsData[index]["song-src"]);
+    downloadLink.href = songsData[index]["song-src"];
     playMusic();
 })
 
@@ -99,6 +128,7 @@ prev.addEventListener("click", function() {
     songName.innerText = songsData[index]["name"];
     img.src = `img/${songsData[index]["img-src"]}`;
     song = new Audio(songsData[index]["song-src"]);
+    downloadLink.href = songsData[index]["song-src"];
     playMusic();
 })
 
@@ -111,10 +141,14 @@ function playMusic() {
     console.log("song play")
     console.log(songPlay)
     console.log(0+" "+song.currentTime+" "+song.duration)
+    volMute.style.display = "none";
+    volFull.style.display = "block"
 }
 
 pause.addEventListener("click", pauseMusic);
 function pauseMusic() {
+    volMute.style.display = "none";
+    volFull.style.display = "block"
     pause.style.display = "none"
     play.style.display = "block"
     song.pause();
@@ -146,3 +180,12 @@ volMute.addEventListener("click", function() {
     volFull.style.display = "block";
     song.volume = 1.0;
 });
+
+function showDownloadText() {
+    console.log("hover download done")
+    document.getElementById('downloadText').style.opacity = "1";
+}
+function hideDownloadText() {
+    console.log("hove remove")
+    document.getElementById('downloadText').style.opacity = "0"
+}
