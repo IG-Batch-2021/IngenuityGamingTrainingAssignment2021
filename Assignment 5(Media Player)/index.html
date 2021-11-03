@@ -15,15 +15,25 @@
         <div class="main">
             <div class="neonBall" idball1></div>
             <div class="music-card">
-                <div class="songName" id="songName">Song Name</div>
+                <div class="songName" id="songName">SongName
+                </div>
+                <a href="#" id="downloadLink" onmousemove="showDownloadText()" onmouseout="hideDownloadText()">
+                    <i class="fal fa-cloud-download"></i>
+                </a>
+                <p id="downloadText">Download this song</p>
                 <div class="img">
                     <img src="img/" alt="Image not found" id="img">
                 </div>
                 <div class="controls">
                     <div id="timeslot">
-                        <span class="displayTime" id="startTime">0s</span>
+                        <!-- <span class="displayTime" id="startTime"></span> -->
                         <progress id="time" value="32" max="100">  </progress>
                         <!-- <input type="range" min="0" max="100" value="50" id="time"> -->
+                        <!-- <span class="displayTime" id="endTime"></span> -->
+                    </div>
+                    <div class="timer">
+                        <span class="displayTime" id="startTime">0s</span>
+                        <span class="divder">&nbsp; / &nbsp;</span>
                         <span class="displayTime" id="endTime"></span>
                     </div>
                     <div class="btns">
