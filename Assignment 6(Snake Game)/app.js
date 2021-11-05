@@ -62,3 +62,24 @@ const game = () => {
     ctx.fillStyle = 'yellow'; //food color
     ctx.fillRect(foodX*gridSize, foodY*gridSize, gridSize-2, gridSize-2);
 }
+
+keyPush = (e) => {
+    switch(e.keyCode) {
+        case 37:
+            xVel = -1;
+            yVel = 0;
+            break;
+        case 38:
+            xVel = 0;
+            yVel = -1;
+            break;
+        case 39:
+            xVel = 1;
+            yVel = 0;
+            break;
+        case 40:
+            xVel = 0;
+            yVel = 1;
+            break;
+        }
+}
