@@ -23,6 +23,8 @@ You may check assignment here
 
 [Assignment 5 (Music Player)](https://ig-batch-2021.github.io/IngenuityGamingTrainingAssignment2021/Assignment%205(Media%20Player)/)
 
+[Assignment 6 (Snake Game)](https://ig-batch-2021.github.io/IngenuityGamingTrainingAssignment2021/Assignment%206(Snake%20Game)/)
+
 ## Social Media Links
 [GitHub](https://github.com/sksketer)
 
