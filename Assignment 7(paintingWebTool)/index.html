@@ -13,12 +13,32 @@
         <div class="tools">
             <div id="save">Save</div>
             <div id="tools">
-
+                <div id="selectedToolName">
+                    None
+                </div>
+                <button type="submit" class="tools-btn" id="brush" onclick="document.getElementById('selectedToolName').innerHTML = 'Brush';">
+                    <i class="fa fa-paint-brush" aria-hidden="true"></i>
+                </button>
+                <button type="submit" class="tools-btn" id="ruler" onclick="document.getElementById('selectedToolName').innerHTML = 'Ruler';">
+                    <i class="fas fa-ruler"></i>
+                </button>
+                <button type="submit" class="tools-btn" id="rectangle" onclick="document.getElementById('selectedToolName').innerHTML = 'Rectangle';">
+                    <i class="far fa-rectangle-wide"></i>
+                </button>
+                <button type="submit" class="tools-btn" id="circle" onclick="document.getElementById('selectedToolName').innerHTML = 'Circle';">
+                    <i class="far fa-circle"></i>
+                </button>
+            </div>
+            <div class="colors">
+                <input type="color" name="color" id="selectColor">
             </div>
         </div>
         <div class="main">
             <canvas id="paintArea"></canvas>
         </div>
     </div>
+    <script src="app.js">
+
+    </script>
 </body>
 </html>
