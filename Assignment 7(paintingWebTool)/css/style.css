@@ -18,6 +18,7 @@
     cursor: pointer;
     margin-bottom: 420px;
     font-weight: bold;
+    text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 #save:hover {
@@ -50,9 +51,10 @@
     justify-content: center;
 }
 #selectColor {
-    width: 25px;
+    max-width: 30px;
 }
 .main {
     width: 100%;
-    border: 2px solid black;  
+    border: 2px solid black;
+    /* cursor: crosshair; */
 }
