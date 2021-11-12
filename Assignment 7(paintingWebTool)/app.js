@@ -13,8 +13,6 @@ canvas.width  = canvas.offsetWidth;
 canvas.height = canvas.offsetHeight;
 let c = canvas.getContext('2d');
 
-let rectangleCordinates = [];
-
 let strokeColor = "black";
 let fillColor = "transparent";
 
@@ -68,12 +66,12 @@ circle.addEventListener("click", function() {
     selectBrush = selectRuler = selectRect = false;
 })
 
-color.addEventListener("click", function() {
+color.addEventListener("input", function() {
     strokeColor = color.value;
     console.log(strokeColor);
-    console.log(fillColor);
     c.fillStyle = fillColor;
     c.strokeStyle = strokeColor;
+    document.getElementById('showColorName').innerHTML = color.value;
 })
 
 // canvas.addEventListener("mousemove", getCordinates(event));
@@ -136,31 +134,32 @@ function drawShape(shape, x, y, width, height) {
 
 function drawBrush(dx, dy, width, height) {
     console.log("brush works");
-    // let isDrawing = false;
-    // // canvas.onmousedown = function(e) {
-    //     console.log("drawing started")
-    //     isDrawing = true;
-    //     c.beginPath();
-    //     c.moveTo(dx, dy);
-    //     // c.lineTo();
-    //     // c.stroke();
-    //     // c.closePath();
-    //     // console.log("brush draw sucessfully");
-    //     // console.log(dx+" "+dy+" "+width+" "+height);
-    // // };
-    // canvas.onmousemove = function(event) {
-    //     if(isDrawing) {
-    //         console.log("drawing")
-    //         c.lineTo(event.clientX, event.clientY);
-    //         c.stroke();
-    //     }
+    let isDrawing = false;
+    // canvas.onmousedown = function(e) {
+        console.log("drawing started")
+        isDrawing = true;
+        c.beginPath();
+        c.moveTo(dx, dy);
+        // c.lineTo();
+        // c.stroke();
+        // c.closePath();
+        // console.log("brush draw sucessfully");
+        // console.log(dx+" "+dy+" "+width+" "+height);
     // };
+    canvas.onmousemove = function(event) {
+        if(isDrawing) {
+            console.log("drawing")
+            c.lineTo(event.clientX, event.clientY);
+            c.stroke();
+        }
+    };
     // c.closePath();
-    // canvas.onmouseup = function(e) {
-    //     isDrawing = false;
-    //     c.closePath();
-    //     console.log("draw completed")
-    // };
+    canvas.onmouseup = function(e) {
+        isDrawing = false;
+        c.closePath();
+        console.log("draw completed")
+    };
+
     // if (selectBrush) {
     //     let isDrawing = true;
     //     canvas.onmousedown = function(e) {
@@ -178,21 +177,20 @@ function drawBrush(dx, dy, width, height) {
     //       console.log("isDrawing false")
     //     };
     // }
-    
 }
 
 function drawRuler(x, y, width, heigth) {
     console.log(x+" "+y);
     c.lineWidth = 5;
-    // let x2 = width+x;
-    // let y2 = height+y;
-    // console.log("start")
-    // c.beginPath();
-    // c.moveTo(x, y);
-    // c.lineTo(x2, y2);
-    // c.stroke();
-    // c.closePath();
-    // console.log("end")
+    let x2 = width+x;
+    let y2 = height+y;
+    console.log("start")
+    c.beginPath();
+    c.moveTo(x, y);
+    c.lineTo(x2, y2);
+    c.stroke();
+    c.closePath();
+    console.log("end")
 }
 
 function drawRect(dx, dy, width, height) {
