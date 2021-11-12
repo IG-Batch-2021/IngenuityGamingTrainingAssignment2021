@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    height: 95vh;
+    height: 90vh;
     display: flex;
     flex-direction: row;
 }
@@ -16,7 +16,7 @@
     padding: 3px 8px;
     color: darkblue;
     cursor: pointer;
-    margin-bottom: 420px;
+    margin-bottom: 400px;
     font-weight: bold;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -41,9 +41,14 @@
     color: black;
     margin: 5px 0px;
 }
-#selectedToolName {
+#clearCanvas {
     font-weight: bold;
     color: darkblue;
+    text-align: center;
+    cursor: pointer;
+}
+#clearCanvas:hover {
+    color: white;
 }
 .colors {
     display: flex;
@@ -55,6 +60,25 @@
 }
 .main {
     width: 100%;
-    border: 2px solid black;
     /* cursor: crosshair; */
+    display: flex;
+    flex-direction: column;
+}
+#paintArea {
+    border: 2px solid black;
+}
+.detailDisplayer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: gray;
+    padding: 5px 42px;
+    margin-top: 3px;
+}
+.show {
+    font-weight: bold;
+}
+#showToolName, #showColorName, #showLiveCursorPosition {
+    color: blue;
+    font-weight: bold;
 }
