@@ -118,6 +118,11 @@ function drwaRect(dx, dy, width, height) {
     c.strokeRect(dx, dy, width, height);
 }
 function drawBrush(dx, dy, width, height) {
+    let radius = 5;
+    c.beginPath();
+    c.arc(x, y, radius, 0, 2 * Math.PI);
+    c.stroke();
+    c.close
 }
 function drawCircle(dx, dy, width, height) {
     let radius = width;
