@@ -13,19 +13,19 @@
         <div class="tools">
             <div id="save">Save</div>
             <div id="tools">
-                <div id="selectedToolName">
-                    None
+                <div id="clearCanvas">
+                    clear <br> All
                 </div>
-                <button type="submit" class="tools-btn" id="brush" onclick="document.getElementById('selectedToolName').innerHTML = 'Brush';">
+                <button type="submit" class="tools-btn" id="brush" onclick="document.getElementById('showToolName').innerHTML = 'Brush';">
                     <i class="fa fa-paint-brush" aria-hidden="true"></i>
                 </button>
-                <button type="submit" class="tools-btn" id="ruler" onclick="document.getElementById('selectedToolName').innerHTML = 'Ruler';">
+                <button type="submit" class="tools-btn" id="ruler" onclick="document.getElementById('showToolName').innerHTML = 'Ruler';">
                     <i class="fas fa-ruler"></i>
                 </button>
-                <button type="submit" class="tools-btn" id="rectangle" onclick="document.getElementById('selectedToolName').innerHTML = 'Rectangle';">
+                <button type="submit" class="tools-btn" id="rectangle" onclick="document.getElementById('showToolName').innerHTML = 'Rectangle';">
                     <i class="far fa-rectangle-wide"></i>
                 </button>
-                <button type="submit" class="tools-btn" id="circle" onclick="document.getElementById('selectedToolName').innerHTML = 'Circle';">
+                <button type="submit" class="tools-btn" id="circle" onclick="document.getElementById('showToolName').innerHTML = 'Circle';">
                     <i class="far fa-circle"></i>
                 </button>
             </div>
@@ -34,8 +34,21 @@
                 <!-- <input type="color" name="fillColor" id="fillColor"> -->
             </div>
         </div>
-        <div class="main" onmousedown="getCordinates(event)" onmouseup="getWidthAndHeight(event)">
-            <canvas id="paintArea"></canvas>
+        <div class="main" id="main" onmousedown="getStartCordinates(event)" onmouseup="getEndCordinates(event)">
+            <canvas id="paintArea" onmousemove="showLiveCordinates(event)"></canvas>
+            <div class="detailDisplayer">
+                <div class="showToolName">
+                    <label id="toolName" class="show">Tool selected: </label>
+                    <span id="showToolName">None</span>
+                </div>
+                <div class="showColorName">
+                    <label id="colorName" class="show">Color: </label>
+                    <span id="showColorName">Black</span>
+                </div>
+                <div class="showLiveCursorPosition" >
+                    <label class="show" id="showLiveCursorPosition">( 0, 0 )</label>
+                </div>
+            </div>
         </div>
     </div>
     <script src="app.js">
