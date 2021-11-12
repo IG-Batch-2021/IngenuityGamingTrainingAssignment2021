@@ -61,7 +61,7 @@ color.addEventListener("click", function() {
 })
 
 // canvas.addEventListener("mousemove", getCordinates(event));
-let x, y;
+let x, y, width, height;
 function getCordinates(event) {
     x = event.clientX - 62;
     y = event.clientY - 10;
@@ -70,13 +70,14 @@ function getCordinates(event) {
     // console.log((x)+" "+(y))
 }
 function getWidthAndHeight(event) {
-    var width = event.clientX - x;
-    var height = event.clientY - y;
+    width = event.clientX - x;
+    height = event.clientY - y;
 
     console.log("width: "+width+" Height: "+height);
     c.fillRect(x, y, width, height);
     c.strokeRect(x, y, width, height);
     console.log(x+" "+y+" "+width+" "+height)
 }
+
 
 // c.fillRect(0, 0, 150, 100);
