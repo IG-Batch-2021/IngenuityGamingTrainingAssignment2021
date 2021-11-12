@@ -88,7 +88,7 @@ function getStartCordinates(event) {
     y = event.clientY - 10;
     main.addEventListener("mousemove", showShape(event));
     // document.onmousemove = showShape(event);
-    console.log("Start cordinates: "+x+" "+y);
+    // console.log("Start cordinates: "+x+" "+y);
 }
 
 function showShape(event) {
@@ -135,30 +135,64 @@ function drawShape(shape, x, y, width, height) {
 }
 
 function drawBrush(dx, dy, width, height) {
-    let radius = 5;
     console.log("brush works");
-    canvas.addEventListener("onmousemove", function() {
-        c.beginPath();
-        c.arc(x, y, radius, 0, 2 * Math.PI);
-        c.stroke();
-        c.closePath();
-        console.log("brush draw sucessfully");
-        console.log(dx+" "+dy+" "+width+" "+height);
-    })
+    // let isDrawing = false;
+    // // canvas.onmousedown = function(e) {
+    //     console.log("drawing started")
+    //     isDrawing = true;
+    //     c.beginPath();
+    //     c.moveTo(dx, dy);
+    //     // c.lineTo();
+    //     // c.stroke();
+    //     // c.closePath();
+    //     // console.log("brush draw sucessfully");
+    //     // console.log(dx+" "+dy+" "+width+" "+height);
+    // // };
+    // canvas.onmousemove = function(event) {
+    //     if(isDrawing) {
+    //         console.log("drawing")
+    //         c.lineTo(event.clientX, event.clientY);
+    //         c.stroke();
+    //     }
+    // };
+    // c.closePath();
+    // canvas.onmouseup = function(e) {
+    //     isDrawing = false;
+    //     c.closePath();
+    //     console.log("draw completed")
+    // };
+    // if (selectBrush) {
+    //     let isDrawing = true;
+    //     canvas.onmousedown = function(e) {
+    //       isDrawing = true;
+    //       c.moveTo(e.clientX, e.clientY);
+    //     };
+    //     canvas.onmousemove = function(e) {
+    //       if (isDrawing) {
+    //         c.lineTo(e.clientX, e.clientY);
+    //         c.stroke();
+    //       }
+    //     };
+    //     canvas.onmouseup = function(e) {
+    //       isDrawing = false;
+    //       console.log("isDrawing false")
+    //     };
+    // }
+    
 }
 
 function drawRuler(x, y, width, heigth) {
     console.log(x+" "+y);
-    c.lineWidth = 2;
-    let x2 = width+x;
-    let y2 = height+y;
-    console.log("start")
-    c.beginPath();
-    c.moveTo(x, y);
-    c.lineTo(x2, y2);
-    c.stroke();
-    c.closePath();
-    console.log("end")
+    c.lineWidth = 5;
+    // let x2 = width+x;
+    // let y2 = height+y;
+    // console.log("start")
+    // c.beginPath();
+    // c.moveTo(x, y);
+    // c.lineTo(x2, y2);
+    // c.stroke();
+    // c.closePath();
+    // console.log("end")
 }
 
 function drawRect(dx, dy, width, height) {
