@@ -96,7 +96,7 @@ function drawShape(shape, x, y, width, height) {
     console.log(shape+" function ");
     switch(shape) {
         case "selectBrush":
-            drawBrush();
+            drawBrush(x, y, width, height);
             break;
         case "selectRuler":
             drawRuler();
@@ -113,17 +113,23 @@ function drawShape(shape, x, y, width, height) {
         
     }
 }
+
 function drwaRect(dx, dy, width, height) {
     c.fillRect(dx, dy, width, height);
     c.strokeRect(dx, dy, width, height);
 }
+
 function drawBrush(dx, dy, width, height) {
     let radius = 5;
+    canvas.addEventListener("onmove");
     c.beginPath();
     c.arc(x, y, radius, 0, 2 * Math.PI);
     c.stroke();
-    c.close
+    c.closePath();
+    console.log("circle draw sucssfully");
+    console.log(dx+" "+dy+" "+width+" "+height);
 }
+
 function drawCircle(dx, dy, width, height) {
     let radius = width;
     c.beginPath();
@@ -131,6 +137,7 @@ function drawCircle(dx, dy, width, height) {
     c.stroke();
     c.closePath();    
 }
+
 function drawRuler() {
 
 }
