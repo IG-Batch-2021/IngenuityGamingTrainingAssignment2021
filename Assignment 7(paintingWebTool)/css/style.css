@@ -5,6 +5,7 @@
     flex-direction: row;
 }
 .tools {
+    max-width: 60px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -16,7 +17,7 @@
     padding: 3px 8px;
     color: darkblue;
     cursor: pointer;
-    margin-bottom: 320px;
+    margin-bottom: 220px;
     font-weight: bold;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -74,6 +75,13 @@
     background-color: gray;
     padding: 5px 42px;
     margin-top: 3px;
+    align-items: center;
+}
+#size-text {
+    font-weight: bold;
+}
+#selectSize {
+    color: darkblue;
 }
 .show {
     font-weight: bold;
