@@ -1,9 +1,11 @@
 const clearAll = document.getElementById('clearCanvas');
 const brush = document.getElementById('brush');
+const eraser = document.getElementById('eraser');
 const ruler = document.getElementById('ruler');
 const rectangle = document.getElementById('rectangle');
 const circle = document.getElementById('circle');
 const color = document.getElementById('strokeColor');
+const size = document.getElementById('selectSize');
 const main = document.getElementById('main');
 
 let canvas = document.getElementById('paintArea');
@@ -16,7 +18,7 @@ let c = canvas.getContext('2d');
 let strokeColor = "black";
 let fillColor = "transparent";
 
-let selectBrush = selectRuler = selectRect = selectCircle = false;
+let selectBrush = selectEraser = selectRuler = selectRect = selectCircle = false;
 
 c.fillStyle = fillColor;
 c.strokeStyle = strokeColor;
@@ -27,43 +29,58 @@ clearAll.addEventListener("click", function() {
 });
 
 brush.addEventListener("click", function() {
-    console.log("Brush is seleced.");
+    console.log("Brush is selected.");
     document.getElementById('brush').style.color = 'blue';
+    document.getElementById('eraser').style.color = 'black';
     document.getElementById('ruler').style.color = 'black';
     document.getElementById('rectangle').style.color = 'black';
     document.getElementById('circle').style.color = 'black';
     selectBrush = true;
-    selectRuler = selectRect = selectCircle = false;
+    selectRuler = selectEraser = selectRect = selectCircle = false;
 })
+
+eraser.addEventListener("click", function() {
+    console.log("Eraser is selected");
+    document.getElementById('brush').style.color = 'black';
+    document.getElementById('eraser').style.color = 'blue';
+    document.getElementById('ruler').style.color = 'black';
+    document.getElementById('rectangle').style.color = 'black';
+    document.getElementById('circle').style.color = 'black';
+    selectEraser = true;
+    selectBrush = selectRuler = selectRect = selectCircle = false;
+});
 
 ruler.addEventListener("click", function() {
     console.log("Ruler is selected.");
     document.getElementById('brush').style.color = 'black';
+    document.getElementById('eraser').style.color = 'black';
     document.getElementById('ruler').style.color = 'blue';
     document.getElementById('rectangle').style.color = 'black';
     document.getElementById('circle').style.color = 'black';
     selectRuler = true;
-    selectBrush = selectRect = selectCircle = false;
+    selectBrush = selectEraser = selectRect = selectCircle = false;
 })
 
 rectangle.addEventListener("click", function() {
     console.log("Rectangle is selected.");
     document.getElementById('brush').style.color = 'black';
+    document.getElementById('eraser').style.color = 'black';
     document.getElementById('ruler').style.color = 'black';
     document.getElementById('rectangle').style.color = 'blue';
     document.getElementById('circle').style.color = 'black';
     selectRect = true;
-    selectBrush = selectRuler = selectCircle = false;    
+    selectBrush = selectEraser = selectRuler = selectCircle = false;    
 })
 
 circle.addEventListener("click", function() {
     console.log("Circle is selected.");
     document.getElementById('brush').style.color = 'black';
+    document.getElementById('eraser').style.color = 'black';
     document.getElementById('ruler').style.color = 'black';
     document.getElementById('rectangle').style.color = 'black';
     document.getElementById('circle').style.color = 'blue';
     selectCircle = true;
-    selectBrush = selectRuler = selectRect = false;
+    selectBrush = selectEraser = selectRuler = selectRect = false;
 })
 
 color.addEventListener("input", function() {
@@ -72,6 +89,11 @@ color.addEventListener("input", function() {
     c.fillStyle = fillColor;
     c.strokeStyle = strokeColor;
     document.getElementById('showColorName').innerHTML = color.value;
+})
+
+size.addEventListener("input", function() {
+    console.log(size.value);
+    c.lineWidth = size.value;
 })
 
 // canvas.addEventListener("mousemove", getCordinates(event));
@@ -93,6 +115,7 @@ function showShape(event) {
     // console.log("fig show: "+event.clientX+" "+event.clientY);
     let shape = "none";
     if(selectRect) shape = "selectRect";
+    else if(selectEraser) shape = "selectEraser";
     else if(selectRuler) shape = "selectRuler";
     else if(selectCircle) shape = "selectCircle";
     else if(selectBrush) shape = "selectBrush";
@@ -105,6 +128,7 @@ function getEndCordinates(event) {
     console.log("End cordinate: "+(width+x)+" "+(height+y))
     let shape = "none";
     if(selectRect) shape = "selectRect";
+    else if(selectEraser) shape = "selectEraser";
     else if(selectRuler) shape = "selectRuler";
     else if(selectCircle) shape = "selectCircle";
     else if(selectBrush) shape = "selectBrush";
@@ -112,10 +136,13 @@ function getEndCordinates(event) {
 }
 
 function drawShape(shape, x, y, width, height) {
-    // console.log(shape+" function ");
+    console.log(shape+" function ");
     switch(shape) {
         case "selectBrush":
             drawBrush(x, y, width, height);
+            break;
+        case "selectEraser":
+            drawEraser(x, y, width, height);
             break;
         case "selectRuler":
             drawRuler(x, y, width, height);
@@ -179,18 +206,74 @@ function drawBrush(dx, dy, width, height) {
     // }
 }
 
+function drawEraser(dx, dy, width, height) {
+    console.log("Eraser works");
+    let isErasing = false;
+    color.value = "#ffffff";
+    strokeColor = color.value;
+    // canvas.onmousedown = function(e) {
+        console.log("Erase start")
+        isErasing = true;
+        c.beginPath();
+        // c.moveTo(dx, dy);
+        // c.lineTo();
+        // c.stroke();
+        // c.closePath();
+        // console.log("brush draw sucessfully");
+        // console.log(dx+" "+dy+" "+width+" "+height);
+    // };
+    let e2, e3;
+    canvas.onmousemove = function(event) {
+        if(isErasing) {
+            console.log("Erasing")
+            c.lineTo(event.clientX, event.clientY);
+            c.stroke();
+            // e2 = event.clientX;
+            // e3 = event.clientY;
+        }
+    };
+    // c.closePath();
+    canvas.onmouseup = function(e) {
+        isErasing = false;
+        c.closePath();
+        // c.clearRect(dx, dy, e2, e3);
+        console.log("Erase completed")
+        // color.value = "#000000";
+        // strokeColor = color.value;
+    };
+    strokeColor = color.value;
+
+    // if (selectBrush) {
+    //     let isDrawing = true;
+    //     canvas.onmousedown = function(e) {
+    //       isDrawing = true;
+    //       c.moveTo(e.clientX, e.clientY);
+    //     };
+    //     canvas.onmousemove = function(e) {
+    //       if (isDrawing) {
+    //         c.lineTo(e.clientX, e.clientY);
+    //         c.stroke();
+    //       }
+    //     };
+    //     canvas.onmouseup = function(e) {
+    //       isDrawing = false;
+    //       console.log("isDrawing false")
+    //     };
+    // }
+}
+
 function drawRuler(x, y, width, heigth) {
     console.log(x+" "+y);
     c.lineWidth = 5;
     let x2 = width+x;
     let y2 = height+y;
-    console.log("start")
+    console.log("start");
     c.beginPath();
     c.moveTo(x, y);
     c.lineTo(x2, y2);
     c.stroke();
     c.closePath();
-    console.log("end")
+    console.log("end");
 }
 
 function drawRect(dx, dy, width, height) {
