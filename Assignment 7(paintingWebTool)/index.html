@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Painting tools</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tools">
+            <div id="save">Save</div>
+            <div id="tools">
+                <div id="clearCanvas">
+                    clear <br> All
+                </div>
+                <button type="submit" class="tools-btn" id="brush" onclick="document.getElementById('showToolName').innerHTML = 'Brush';">
+                    <i class="fa fa-paint-brush" aria-hidden="true"></i>
+                </button>
+                <button type="submit" class="tools-btn" id="eraser">
+                    <i class="fad fa-eraser"></i>
+                </button>
+                <button type="submit" class="tools-btn" id="ruler" onclick="document.getElementById('showToolName').innerHTML = 'Ruler';">
+                    <i class="fas fa-ruler"></i>
+                </button>
+                <button type="submit" class="tools-btn" id="rectangle" onclick="document.getElementById('showToolName').innerHTML = 'Rectangle';">
+                    <i class="far fa-rectangle-wide"></i>
+                </button>
+                <button type="submit" class="tools-btn" id="circle" onclick="document.getElementById('showToolName').innerHTML = 'Circle';">
+                    <i class="far fa-circle"></i>
+                </button>
+            </div>
+            <div class="colors">
+                <input type="color" name="Strokecolor" id="strokeColor">
+                <!-- <input type="color" name="fillColor" id="fillColor"> -->
+            </div>
+        </div>
+        <div class="main" id="main">
+            <canvas id="paintArea" onmousedown="getStartCordinates(event)" onmouseup="getEndCordinates(event)" onmousemove="showLiveCordinates(event)"></canvas>
+            <div class="detailDisplayer">
+                <div id="size">
+                    <label id="size-text">Brush size</label>
+                    <input type="range" min="2" max="12" name="size" id="selectSize">
+                </div>
+                <div class="showToolName">
+                    <label id="toolName" class="show">Tool selected: </label>
+                    <span id="showToolName">None</span>
+                </div>
+                <div class="showColorName">
+                    <label id="colorName" class="show">Color-code: </label>
+                    <span id="showColorName">#000000</span>
+                </div>
+                <div class="showLiveCursorPosition" >
+                    <label class="show" id="showLiveCursorPosition">( 0, 0 )</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js">
+
+    </script>
+</body>
+</html>
