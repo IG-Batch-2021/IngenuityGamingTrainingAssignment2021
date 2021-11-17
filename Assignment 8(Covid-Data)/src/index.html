@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Covid API</title>
 </head>
 <body>
     <div class="container">
         <div class="heading">Covid Report</div>
         <div class="search">
-            <label for="countries">Select country: </label>
-            <select name="country" id="country">
-                <option value="asia">Asia</option>
-                <option value="africa">Africa</option>
-                <option value="europe">Europe</option>
-                <option value="northamerica">North America</option>
-                <option value="southamerica">South America</option>
-                <option value="australia">Australia</option>
-            </select>
+            <div class="country">
+                <label for="countries">Select country: </label>
+                <select name="country" id="country">
+                    <option value="asia">Asia</option>
+                    <option value="africa">Africa</option>
+                    <option value="europe">Europe</option>
+                    <option value="northamerica">North America</option>
+                    <option value="southamerica">South America</option>
+                    <option value="australia">Australia</option>
+                </select>
+            </div>
+            <div class="news">
+                <label for="news">News About: </label>
+                <select name="news" id="news">
+                    <option value="get-coronavirus-news/0">Corona virus news</option>
+                    <option value="get-health-news/1">Health news</option>
+                    <option value="get-vaccine-news">Vaccine news</option>
+                </select>
+            </div>
             <button id="search-btn">Search</button>
         </div>
     </div>
