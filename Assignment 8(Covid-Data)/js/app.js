@@ -22,7 +22,7 @@ searchBtn.addEventListener("click", () => {
 });
 const getAllData = (url, country, method, header) => __awaiter(void 0, void 0, void 0, function* () {
     let searchURL = url.concat(country);
-    const allData = yield fetch(url, {
+    const allData = yield fetch(searchURL, {
         "method": method,
         "headers": header
     })
@@ -33,4 +33,7 @@ const getAllData = (url, country, method, header) => __awaiter(void 0, void 0, v
         console.error(err);
     });
 });
+function filterData(arg0) {
+    throw new Error("Function not implemented.");
+}
 //# sourceMappingURL=app.js.map
