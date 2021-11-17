@@ -41,12 +41,10 @@ function filterData(data: Promise<any>): any {
 
     function printAddress() {
         data.then((a) => {
-            console.log("-------------")
             // console.log(a);
             for(let i=0; i<a.length; i++) {
                 console.log("id: "+a[i].id+" Rank: "+a[i].rank+" ActiveCases: "+a[i].ActiveCases+" Case Fatality Rate: "+a[i].Case_Fatality_Rate+" Continent: "+a[i].Continent+" Contry: "+a[i].Country);
             }
-            console.log("-------------")
         });
     }
 }
