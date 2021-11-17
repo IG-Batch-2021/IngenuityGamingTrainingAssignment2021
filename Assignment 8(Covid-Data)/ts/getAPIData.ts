@@ -19,13 +19,14 @@
 
     const getAllData = async (url: string, country: string, method: string, header: Headers): Promise<any> => {
         let searchURL: string = url.concat(country);
-
+        // allData;
         const allData = await fetch(searchURL, {
             "method": method,
             "headers": header
         })
         .then(response => {
             console.log(response.json());
+            // console.log(filterData(response.json()));
         })
         .catch(err => {
             console.error(err);
@@ -33,4 +34,9 @@
         
     }
 
+
+function filterData(arg0: Promise<any>): any {
+    throw new Error("Function not implemented.");
+    // console.log("hello json data")
+}
 // }
