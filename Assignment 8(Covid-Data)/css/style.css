@@ -1,0 +1,14 @@
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+
+.container {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.heading {
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+}
