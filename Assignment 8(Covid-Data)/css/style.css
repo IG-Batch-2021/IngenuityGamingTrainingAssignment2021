@@ -12,3 +12,8 @@
     font-weight: bold;
     text-align: center;
 }
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
