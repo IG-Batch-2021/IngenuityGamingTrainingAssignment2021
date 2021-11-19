@@ -4,6 +4,7 @@
     border: 1px solid black;
     display: flex;
     flex-direction: column;
+    margin: auto;
     text-align: center;
 }
 
@@ -11,6 +12,37 @@
     font-size: 45px;
     font-weight: bold;
     text-align: center;
+}
+.search {
+    display: flex;
+    flex-direction: row;
+}
+/* #country {
+    padding-top: 5px 12px;
+} */
+#search-btn, #news-btn, #treatment-btn {
+    padding: 3px 8px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid black;
+    background-color: transparent;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+#search-btn:hover {
+    background-color: darkblue;
+    border-color: rgb(0, 0, 65);
+    color: rgb(255, 255, 255);
+}
+#news-btn:hover{
+    background-color: rgb(248, 0, 0);
+    border-color: rgb(138, 0, 0);
+    color: rgb(253, 253, 253);
+}
+#treatment-btn:hover {
+    background-color: darkgreen;
+    border-color: rgb(0, 46, 0);
+    color: rgb(255, 255, 255);
 }
 .cards {
     display: flex;
