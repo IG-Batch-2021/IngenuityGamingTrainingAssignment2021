@@ -2,6 +2,9 @@ const searchBtn = <HTMLButtonElement>document.getElementById('search-btn');
 let selectRange: any;
 
 searchBtn.addEventListener("click", () => {
+    setTimeout(function() { 
+        alert('Data Added '); 
+  }, 5000);
     let countryName: string = (<HTMLInputElement>document.getElementById('country')).value;
     selectRange = (<HTMLInputElement>document.getElementById('selectRange')).value;
     
