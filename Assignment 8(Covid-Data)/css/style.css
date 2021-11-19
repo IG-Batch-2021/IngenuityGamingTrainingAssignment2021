@@ -33,6 +33,10 @@ body {
 }
 .content {
     display: flex;
+    flex-direction: column;
+}
+label {
+    color: white;
 }
 #country {
     color: darkblue;
