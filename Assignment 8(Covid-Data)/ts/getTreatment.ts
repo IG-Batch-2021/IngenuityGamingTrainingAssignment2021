@@ -1,4 +1,4 @@
-const treatmentBtn = <HTMLButtonElement>document.getElementById('search-btn');
+const treatmentBtn = <HTMLButtonElement>document.getElementById('treatment-btn');
 
 treatmentBtn.addEventListener("click", () => {
     let treatment: string = (<HTMLInputElement>document.getElementById('treatment')).value;
