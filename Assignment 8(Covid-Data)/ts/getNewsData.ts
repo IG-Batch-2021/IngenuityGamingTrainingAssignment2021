@@ -2,6 +2,9 @@ const newsBtn = <HTMLButtonElement>document.getElementById('news-btn');
 let selectNewsRange : any;
 
 newsBtn.addEventListener("click", () => {
+    setTimeout(function() { 
+        alert('Data Added '); 
+  }, 2000);
     let news: string = (<HTMLInputElement>document.getElementById('news')).value;
     selectNewsRange = (<HTMLInputElement>document.getElementById('selectRange')).value;
     
