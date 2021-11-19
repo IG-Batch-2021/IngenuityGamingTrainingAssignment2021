@@ -14,4 +14,6 @@ declare function createCard(continent: string, country: string, tCasesNumber: nu
 declare let newsData: HTMLDivElement;
 declare function createNewsCard(title: string, content: string, pubdate: string, reference: string, link: string): void;
 declare function formateDate(date: string): string;
+declare let treatmentData: HTMLDivElement;
+declare function createTreatmentCard(category: string, description: string, funder: string, lastUpdated: string, nextSteps: string): void;
 //# sourceMappingURL=app.d.ts.map
