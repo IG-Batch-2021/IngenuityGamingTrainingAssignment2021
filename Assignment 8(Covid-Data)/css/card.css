@@ -10,6 +10,8 @@
     margin: 3px auto;
     background-color: #101820FF;
     color: #F2AA4CFF;
+    /* background: transparent;
+    color: black; */
 }
 .continentName {
     font-size: 55px;
@@ -41,14 +43,36 @@
     padding: 12px;
     text-align: center;
     margin: 3px auto;
+    background: orange;
+    color: white;
 }
 .title, .content, .date, .referenceText {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     padding-top: 5px;
+    text-align: center;
     font-family: 'Permanent Marker', cursive;
     letter-spacing: 2px;
 }
 .link {
     text-decoration: none;
+}
+
+/* treatment */
+.treatmentCard {
+    max-width: 320px;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 12px;
+    text-align: center;
+    margin: 3px auto;
+    background-color: rgb(58, 58, 58);
+    color: rgb(255, 166, 0);
+}
+.category, .description, .funder, .lastUpdated, .nextSteps {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 5px;
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 2px;
 }
