@@ -4,7 +4,7 @@ let selectRange: any;
 searchBtn.addEventListener("click", () => {
     setTimeout(function() { 
         alert('Data Added '); 
-  }, 5000);
+  }, 2000);
     let countryName: string = (<HTMLInputElement>document.getElementById('country')).value;
     selectRange = (<HTMLInputElement>document.getElementById('selectRange')).value;
     
@@ -45,7 +45,7 @@ function filterData(data: Promise<any>): any {
     function printData() {
         data.then((a) => {
             if(selectRange == -1) {
-                length = Number.MAX_SAFE_INTEGER;
+                length = 5;
             } else {
                 length = (selectRange < a.length) ? selectRange : a.length;
             }
