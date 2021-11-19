@@ -13,34 +13,44 @@
         <div class="heading">Covid Report</div>
         <div class="search">
             <div class="country">
-                <label for="countries">Select Country: </label>
-                <select name="country" id="country">
-                    <option value="">All</option>
-                    <option value="asia">Asia</option>
-                    <option value="africa">Africa</option>
-                    <option value="europe">Europe</option>
-                    <option value="northamerica">North America</option>
-                    <option value="southamerica">South America</option>
-                    <option value="australia">Australia</option>
-                </select>
+                <div class="content">
+                    <label for="countries">Select Country: </label>
+                    <select name="country" id="country">
+                        <option value="">All</option>
+                        <option value="asia">Asia</option>
+                        <option value="africa">Africa</option>
+                        <option value="europe">Europe</option>
+                        <option value="northamerica">North America</option>
+                        <option value="southamerica">South America</option>
+                        <option value="australia">Australia</option>
+                    </select>
+                </div>
+                <button id="search-btn">Search CovidReports</button>
             </div>
             <div class="news">
-                <label for="news">News About: </label>
-                <select name="news" id="news">
-                    <option value="coronavirus-news/0">Corona virus news</option>
-                    <option value="health-news/1">Health news</option>
-                    <option value="vaccine-news">Vaccine news</option>
-                </select>
+                <div class="content">
+                    <label for="news">News About: </label>
+                    <select name="news" id="news">
+                        <option value="coronavirus-news/0">Corona virus news</option>
+                        <option value="health-news/1">Health news</option>
+                        <option value="vaccine-news">Vaccine news</option>
+                    </select>
+                </div>
+                <button id="news-btn">Search News</button>
             </div>
             <div class="treatment">
-                <label for="treatement">Treatements: </label>
-                <select name="treatment" id="treatment">
-                    <option value="treatment">All Data</option>
-                    <option value="vaccines-phase-i">Vaccines phase I</option>
-                    <option value="vaccines-phase-ii">Vaccines phase II</option>
-                    <option value="vaccines-phase-iii">Vaccines phase III</option>
-                </select>
+                <div class="content">
+                    <label for="treatement">Treatements: </label>
+                    <select name="treatment" id="treatment">
+                        <option value="treatment">All Data</option>
+                        <option value="vaccines-phase-i">Vaccines phase I</option>
+                        <option value="vaccines-phase-ii">Vaccines phase II</option>
+                        <option value="vaccines-phase-iii">Vaccines phase III</option>
+                    </select>
+                </div>
+                <button id="treatment-btn">check</button>
             </div>
+
             <div class="selectRange">
                 <label for="selectRange">Select Data Range: </label>
                 <select name="selectRange" id="selectRange">
@@ -52,7 +62,6 @@
                     <option value=50>50</option>
                 </select>
             </div>
-            <button id="search-btn">Search</button>
         </div>
     </div>
     <div class="cards">
@@ -61,7 +70,7 @@
         <div class="treatementData">treatement data</div> -->
     </div>
     <span>
-        hello
+        hello, sk
     </span>
     <script src="../js/app.js"></script>
 </body>
