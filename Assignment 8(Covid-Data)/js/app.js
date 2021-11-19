@@ -11,6 +11,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const searchBtn = document.getElementById('search-btn');
 let selectRange;
 searchBtn.addEventListener("click", () => {
+    setTimeout(function () {
+        alert('Data Added ');
+    }, 5000);
     let countryName = document.getElementById('country').value;
     selectRange = document.getElementById('selectRange').value;
     let url = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/";
@@ -55,7 +58,7 @@ function filterData(data) {
         });
     }
 }
-const newsBtn = document.getElementById('search-btn');
+const newsBtn = document.getElementById('news-btn');
 let selectNewsRange;
 newsBtn.addEventListener("click", () => {
     let news = document.getElementById('news').value;
@@ -83,6 +86,40 @@ const getAllNews = (url, news, method, header) => __awaiter(void 0, void 0, void
 function filterNews(data) {
     for (let i = 0; i < data.news.length; i++) {
         createNewsCard(data.news[i].title, data.news[i].content, data.news[i].pubDate, data.news[i].reference, data.news[i].link);
+    }
+}
+const treatmentBtn = document.getElementById('treatment-btn');
+treatmentBtn.addEventListener("click", () => {
+    let treatment = document.getElementById('treatment').value;
+    let url = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/vaccines/get-all-";
+    let method = "GET";
+    let header = new Headers({
+        'x-rapidapi-host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com',
+        'x-rapidapi-key': 'bdea297777mshb53f53d0f52d568p1bd596jsnb5f6b97e6717'
+    });
+    getTreatmentData(url, treatment, method, header);
+    console.log("Treatment Data");
+});
+const getTreatmentData = (url, country, method, header) => __awaiter(void 0, void 0, void 0, function* () {
+    let treatmentUrl = url.concat(country);
+    const treatmentData = yield fetch(treatmentUrl, {
+        "method": method,
+        "headers": header
+    })
+        .then(response => response.json())
+        .then((response) => {
+        filterTreatment(response);
+    })
+        .catch(err => {
+        console.error(err);
+    });
+});
+function filterTreatment(data) {
+    printTreatmentData();
+    console.log(data);
+    function printTreatmentData() {
+        for (let i = 0; i < data.length; i++) {
+        }
     }
 }
 let covidData = document.createElement('div');
