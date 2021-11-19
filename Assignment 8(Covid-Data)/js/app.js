@@ -13,7 +13,7 @@ let selectRange;
 searchBtn.addEventListener("click", () => {
     setTimeout(function () {
         alert('Data Added ');
-    }, 5000);
+    }, 2000);
     let countryName = document.getElementById('country').value;
     selectRange = document.getElementById('selectRange').value;
     let url = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/";
@@ -45,7 +45,7 @@ function filterData(data) {
     function printData() {
         data.then((a) => {
             if (selectRange == -1) {
-                length = Number.MAX_SAFE_INTEGER;
+                length = 5;
             }
             else {
                 length = (selectRange < a.length) ? selectRange : a.length;
@@ -61,6 +61,9 @@ function filterData(data) {
 const newsBtn = document.getElementById('news-btn');
 let selectNewsRange;
 newsBtn.addEventListener("click", () => {
+    setTimeout(function () {
+        alert('Data Added ');
+    }, 2000);
     let news = document.getElementById('news').value;
     selectNewsRange = document.getElementById('selectRange').value;
     let url = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/news/get-";
@@ -90,6 +93,9 @@ function filterNews(data) {
 }
 const treatmentBtn = document.getElementById('treatment-btn');
 treatmentBtn.addEventListener("click", () => {
+    setTimeout(function () {
+        alert('Data Added ');
+    }, 2000);
     let treatment = document.getElementById('treatment').value;
     let url = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/vaccines/get-all-";
     let method = "GET";
@@ -119,6 +125,7 @@ function filterTreatment(data) {
     console.log(data);
     function printTreatmentData() {
         for (let i = 0; i < data.length; i++) {
+            createTreatmentCard(data[i].category, data[i].description, data[i].funder, data[i].lastUpdated, data[i].nextSteps);
         }
     }
 }
@@ -241,5 +248,56 @@ function formateDate(date) {
     let year = date.charAt(0) + date.charAt(1) + date.charAt(2) + date.charAt(3);
     let formatedDate = day + "-" + month + "-" + year;
     return formatedDate;
+}
+let treatmentData = document.createElement('div');
+treatmentData.setAttribute("class", "treatmentData");
+function createTreatmentCard(category, description, funder, lastUpdated, nextSteps) {
+    let treatmentCard = document.createElement('div');
+    treatmentCard.setAttribute("class", "treatmentCard");
+    let hr = document.createElement('hr');
+    let lineBreak = document.createElement('br');
+    let categoryText = document.createElement('div');
+    categoryText.setAttribute("class", "category");
+    categoryText.textContent = "Category";
+    let categoryContent = document.createElement('div');
+    categoryContent.setAttribute("class", "categoryContent");
+    categoryContent.textContent = category;
+    let descriptionText = document.createElement('div');
+    descriptionText.setAttribute("class", "description");
+    descriptionText.textContent = "Description";
+    let descriptionContent = document.createElement('div');
+    descriptionContent.setAttribute("class", "contentContent");
+    descriptionContent.textContent = description;
+    let funderText = document.createElement('div');
+    funderText.setAttribute("class", "funder");
+    funderText.textContent = "Funder";
+    let funderContent = document.createElement('div');
+    funderContent.setAttribute("class", "funderContent");
+    funderContent.textContent = funder;
+    let lastUpdatedText = document.createElement('div');
+    lastUpdatedText.setAttribute("class", "lastUpdated");
+    lastUpdatedText.textContent = "Last Updated";
+    let lastUpdatedContext = document.createElement('div');
+    lastUpdatedContext.setAttribute("class", "lastUpdatedContext");
+    lastUpdatedContext.textContent = lastUpdated;
+    let nextStepsText = document.createElement('a');
+    nextStepsText.setAttribute("class", "nextSteps");
+    nextStepsText.textContent = "Next Steps Text";
+    let nextStepsTextContent = document.createElement('div');
+    nextStepsTextContent.setAttribute("class", "nextStepsContent");
+    nextStepsTextContent.textContent = nextSteps;
+    treatmentCard.appendChild(categoryText);
+    treatmentCard.appendChild(categoryContent);
+    treatmentCard.appendChild(descriptionText);
+    treatmentCard.appendChild(descriptionContent);
+    treatmentCard.appendChild(funderText);
+    treatmentCard.appendChild(funderContent);
+    treatmentCard.appendChild(lastUpdatedText);
+    treatmentCard.appendChild(lastUpdatedContext);
+    treatmentCard.appendChild(nextStepsText);
+    treatmentCard.appendChild(nextStepsTextContent);
+    treatmentData.appendChild(treatmentCard);
+    document.body.appendChild(treatmentData);
+    console.log("treatement data");
 }
 //# sourceMappingURL=app.js.map
