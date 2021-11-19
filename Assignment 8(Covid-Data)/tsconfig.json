@@ -98,5 +98,5 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "file": ["ts/index.ts"],
-  "exclude": ["./js/", "ts/index.js", "ts/getTreatment.ts", "../sir code for practics/apiData.ts", "../sir code for practics/covidData.ts"]
+  "exclude": ["./js/", "ts/index.js", "../sir code for practics/apiData.ts", "../sir code for practics/covidData.ts"]
 }
