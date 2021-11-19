@@ -1,4 +1,4 @@
-const newsBtn = <HTMLButtonElement>document.getElementById('search-btn');
+const newsBtn = <HTMLButtonElement>document.getElementById('news-btn');
 let selectNewsRange : any;
 
 newsBtn.addEventListener("click", () => {
