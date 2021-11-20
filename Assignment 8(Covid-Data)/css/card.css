@@ -43,8 +43,8 @@
     padding: 12px;
     text-align: center;
     margin: 3px auto;
-    background: gray;
-    color: rgb(2, 2, 39);
+    background: rgb(0, 11, 77);
+    color: rgb(190, 190, 252);
 }
 .title, .content, .date, .referenceText {
     font-size: 22px;
@@ -56,6 +56,7 @@
 }
 .link {
     text-decoration: none;
+    margin-top: 12px;
 }
 
 /* treatment */
@@ -66,8 +67,8 @@
     padding: 12px;
     text-align: center;
     margin: 3px auto;
-    background-color: rgb(58, 58, 58);
-    color: rgb(255, 166, 0);
+    background-color: rgb(34, 120, 233);
+    color: rgb(36, 35, 33);
 }
 .category, .description, .funder, .lastUpdated, .nextSteps {
     font-size: 25px;
