@@ -2,9 +2,6 @@ const searchBtn = <HTMLButtonElement>document.getElementById('search-btn');
 let selectRange: any;
 
 searchBtn.addEventListener("click", () => {
-    setTimeout(function() { 
-        alert('Data Added '); 
-  }, 2000);
     let countryName: string = (<HTMLInputElement>document.getElementById('country')).value;
     selectRange = (<HTMLInputElement>document.getElementById('selectRange')).value;
     
@@ -30,10 +27,15 @@ const getAllData = async (url: string, country: string, method: string, header: 
     })
     .then(response => {
         // console.log(response.json());
+        setTimeout(function() { 
+            alert('Data Added '); 
+        }, 2000);
         console.log(filterData(response.json()));
     })
     .catch(err => {
-        console.error(err);
+        console.log("You might not connected to Internet.");
+        alert("You might not connected to Internet.");
+        // console.error(err);
     });
     
 }
