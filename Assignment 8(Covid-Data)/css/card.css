@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+
 
 *{padding: 0; margin: 0; box-sizing: border-box;}
 .card {
@@ -44,22 +46,26 @@
     text-align: center;
     margin: 3px auto;
     background: rgb(0, 11, 77);
-    color: rgb(190, 190, 252);
+    color: rgb(255, 255, 255);
 }
 .title, .content, .date, .referenceText {
     font-size: 22px;
     font-weight: bold;
     padding-top: 5px;
     text-align: center;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Lobster Two', cursive;
+    /* font-family: 'Permanent Marker', cursive; */
     letter-spacing: 2px;
 }
 .link {
     text-decoration: none;
-    margin-top: 12px;
+    color: white;
 }
 
 /* treatment */
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+
 .treatmentCard {
     max-width: 320px;
     border: 3px solid black;
@@ -67,13 +73,16 @@
     padding: 12px;
     text-align: center;
     margin: 3px auto;
-    background-color: rgb(34, 120, 233);
-    color: rgb(36, 35, 33);
+    background-color: rgb(46, 48, 51);
+    color: rgb(103, 174, 255);
 }
 .category, .description, .funder, .lastUpdated, .nextSteps {
+    color: rgb(4, 113, 236);
     font-size: 25px;
     font-weight: bold;
     padding-top: 5px;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Aclonica', sans-serif;
+    /* font-family: 'Gloria Hallelujah', cursive; */
+    /* font-family: 'Permanent Marker', cursive; */
     letter-spacing: 2px;
 }
