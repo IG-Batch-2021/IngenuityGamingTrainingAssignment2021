@@ -87,6 +87,7 @@ const getAllNews = (url, news, method, header) => __awaiter(void 0, void 0, void
     });
 });
 function filterNews(data) {
+    console.log(data);
     for (let i = 0; i < data.news.length; i++) {
         createNewsCard(data.news[i].title, data.news[i].content, data.news[i].pubDate, data.news[i].reference, data.news[i].link);
     }
@@ -223,8 +224,6 @@ function createNewsCard(title, content, pubdate, reference, link) {
     linkTag.setAttribute("class", "link");
     linkTag.setAttribute("href", link);
     linkTag.textContent = "Link";
-    newsCard.appendChild(titleText);
-    newsCard.appendChild(titleContent);
     newsCard.appendChild(hr);
     newsCard.appendChild(contentText);
     newsCard.appendChild(contentContent);
