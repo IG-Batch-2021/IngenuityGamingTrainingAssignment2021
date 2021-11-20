@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+
+
+*{padding: 0; margin: 0; box-sizing: border-box;}
+.card {
+    max-width: 300px;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 12px;
+    text-align: center;
+    margin: 3px auto;
+    box-shadow: inset 0px 0px 5px white;
+    background-color: rgb(0, 129, 180);
+    color: rgb(255, 255, 255);
+    /* background: transparent;
+    color: black; */
+}
+.continentName {
+    font-size: 55px;
+    font-weight: bold;
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 2px;    
+}
+.countryName {
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-family: 'Permanent Marker', cursive;
+}
+.totalCases, .totalRecovery, .activeCases {
+    margin: 10px 0;
+}
+/* .cardText {
+
+} */
+.cardNumber {
+    font-weight: lighter;
+}
+
+/* News CSS */
+.newsCard {
+    max-width: 320px;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 12px;
+    text-align: center;
+    margin: 3px auto;
+    background: rgb(0, 11, 77);
+    color: rgb(255, 255, 255);
+}
+.title, .content, .date, .referenceText {
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 5px;
+    text-align: center;
+    font-family: 'Lobster Two', cursive;
+    /* font-family: 'Permanent Marker', cursive; */
+    letter-spacing: 2px;
+}
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+/* treatment */
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+
+.treatmentCard {
+    max-width: 320px;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 12px;
+    text-align: center;
+    margin: 3px auto;
+    background-color: rgb(46, 48, 51);
+    color: rgb(103, 174, 255);
+}
+.category, .description, .funder, .lastUpdated, .nextSteps {
+    color: rgb(4, 113, 236);
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 5px;
+    font-family: 'Aclonica', sans-serif;
+    /* font-family: 'Gloria Hallelujah', cursive; */
+    /* font-family: 'Permanent Marker', cursive; */
+    letter-spacing: 2px;
+}
