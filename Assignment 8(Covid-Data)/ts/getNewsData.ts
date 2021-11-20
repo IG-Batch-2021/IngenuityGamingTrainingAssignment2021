@@ -34,6 +34,7 @@ const getAllNews = async (url: string, news: string, method: string, header: Hea
 }
 
 function filterNews(data: any): void {
+    console.log(data);
     for(let i=0; i<data.news.length; i++) {
         createNewsCard(data.news[i].title, data.news[i].content, data.news[i].pubDate, data.news[i].reference, data.news[i].link);
     }
