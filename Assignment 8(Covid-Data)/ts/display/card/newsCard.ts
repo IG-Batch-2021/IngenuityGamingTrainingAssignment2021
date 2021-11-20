@@ -55,6 +55,7 @@ function createNewsCard(title: string, content: string, pubdate: string, referen
     newsCard.appendChild(pubDate);
     newsCard.appendChild(contentText);
     newsCard.appendChild(contentContent);
+    newsCard.appendChild(hr);
     newsCard.appendChild(lineBreak);
     newsCard.appendChild(hr);
     newsCard.appendChild(linkTag);
