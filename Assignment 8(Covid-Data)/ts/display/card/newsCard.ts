@@ -47,8 +47,8 @@ function createNewsCard(title: string, content: string, pubdate: string, referen
     linkTag.setAttribute("href", link);
     linkTag.textContent = "Link";
 
-    newsCard.appendChild(titleText);
-    newsCard.appendChild(titleContent);
+    // newsCard.appendChild(titleText);
+    // newsCard.appendChild(titleContent);
     newsCard.appendChild(hr);
     newsCard.appendChild(contentText);
     newsCard.appendChild(contentContent);
