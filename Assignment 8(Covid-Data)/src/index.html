@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/card.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Covid API</title>
 </head>
 <body>
@@ -25,7 +26,7 @@
                         <option value="australia">Australia</option>
                     </select>
                 </div>
-                <button id="search-btn">Search CovidReports</button>
+                <button id="search-btn"><i class="fa fa-search" aria-hidden="true"></i> CovidReports</button>
             </div>
             <div class="news">
                 <div class="content">
@@ -36,7 +37,7 @@
                         <option value="vaccine-news">Vaccine news</option>
                     </select>
                 </div>
-                <button id="news-btn">Search News</button>
+                <button id="news-btn"><i class="fas fa-newspaper"></i> News</button>
             </div>
             <div class="treatment">
                 <div class="content">
@@ -48,19 +49,21 @@
                         <option value="vaccines-phase-iii">Vaccines phase III</option>
                     </select>
                 </div>
-                <button id="treatment-btn">check</button>
+                <button id="treatment-btn"><i class="fa fa-medkit" aria-hidden="true"></i> check</button>
             </div>
 
             <div class="selectRange">
-                <label for="selectRange">Select Data Range: </label>
-                <select name="selectRange" id="selectRange">
-                    <option value=-1>null</option>
-                    <option value=10>10</option>
-                    <option value=20>20</option>
-                    <option value=25>25</option>
-                    <option value=30>30</option>
-                    <option value=50>50</option>
-                </select>
+                <div class="content">
+                    <label for="selectRange">Select Data Range: </label>
+                    <select name="selectRange" id="selectRange">
+                        <option value=-1>null</option>
+                        <option value=10>10</option>
+                        <option value=20>20</option>
+                        <option value=25>25</option>
+                        <option value=30>30</option>
+                        <option value=50>50</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
