@@ -1,9 +1,6 @@
 const treatmentBtn = <HTMLButtonElement>document.getElementById('treatment-btn');
 
 treatmentBtn.addEventListener("click", () => {
-    setTimeout(function() { 
-        alert('Data Added '); 
-  }, 2000);
     let treatment: string = (<HTMLInputElement>document.getElementById('treatment')).value;
     
     let url: string = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/vaccines/get-all-";
@@ -27,10 +24,16 @@ const getTreatmentData = async (url: string, country: string, method: string, he
     })
     .then(response => response.json())
     .then((response) => {
+        setTimeout(function() { 
+            alert('Data Added '); 
+        }, 2000);
+
         filterTreatment(response);
     })
     .catch(err => {
-        console.error(err);
+        console.log("You might not connected to Internet.");
+        alert("You might not connected to Internet.");
+        // console.error(err);
     });
     
 }
