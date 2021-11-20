@@ -230,6 +230,7 @@ function createNewsCard(title, content, pubdate, reference, link) {
     newsCard.appendChild(pubDate);
     newsCard.appendChild(contentText);
     newsCard.appendChild(contentContent);
+    newsCard.appendChild(hr);
     newsCard.appendChild(lineBreak);
     newsCard.appendChild(hr);
     newsCard.appendChild(linkTag);
