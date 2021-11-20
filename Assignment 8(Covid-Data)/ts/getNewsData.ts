@@ -2,9 +2,6 @@ const newsBtn = <HTMLButtonElement>document.getElementById('news-btn');
 let selectNewsRange : any;
 
 newsBtn.addEventListener("click", () => {
-    setTimeout(function() { 
-        alert('Data Added '); 
-  }, 2000);
     let news: string = (<HTMLInputElement>document.getElementById('news')).value;
     selectNewsRange = (<HTMLInputElement>document.getElementById('selectRange')).value;
     
@@ -29,8 +26,16 @@ const getAllNews = async (url: string, news: string, method: string, header: Hea
     })
     .then(response =>  response.json())
     .then((response) => {
+        setTimeout(function() { 
+            alert('Data Added '); 
+        }, 2000);
         filterNews(response);
-    })    
+    })
+    .catch(err => {
+        console.log("You might not connected to Internet.");
+        alert("You might not connected to Internet.");
+        // console.error(err);
+    });
 }
 
 function filterNews(data: any): void {
