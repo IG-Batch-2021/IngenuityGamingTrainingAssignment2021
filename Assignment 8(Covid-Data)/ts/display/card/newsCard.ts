@@ -49,15 +49,12 @@ function createNewsCard(title: string, content: string, pubdate: string, referen
 
     // newsCard.appendChild(titleText);
     // newsCard.appendChild(titleContent);
-    newsCard.appendChild(hr);
-    newsCard.appendChild(contentText);
-    newsCard.appendChild(contentContent);
-    newsCard.appendChild(hr);
-    newsCard.appendChild(date);
-    newsCard.appendChild(pubDate);
-    newsCard.appendChild(hr);
     newsCard.appendChild(referenceText);
     newsCard.appendChild(referenceContent);
+    newsCard.appendChild(date);
+    newsCard.appendChild(pubDate);
+    newsCard.appendChild(contentText);
+    newsCard.appendChild(contentContent);
     newsCard.appendChild(lineBreak);
     newsCard.appendChild(hr);
     newsCard.appendChild(linkTag);
