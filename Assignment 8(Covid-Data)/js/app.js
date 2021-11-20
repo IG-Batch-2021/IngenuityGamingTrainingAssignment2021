@@ -11,9 +11,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const searchBtn = document.getElementById('search-btn');
 let selectRange;
 searchBtn.addEventListener("click", () => {
-    setTimeout(function () {
-        alert('Data Added ');
-    }, 2000);
     let countryName = document.getElementById('country').value;
     selectRange = document.getElementById('selectRange').value;
     let url = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/";
@@ -33,10 +30,14 @@ const getAllData = (url, country, method, header) => __awaiter(void 0, void 0, v
         "headers": header
     })
         .then(response => {
+        setTimeout(function () {
+            alert('Data Added ');
+        }, 2000);
         console.log(filterData(response.json()));
     })
         .catch(err => {
-        console.error(err);
+        console.log("You might not connected to Internet.");
+        alert("You might not connected to Internet.");
     });
 });
 function filterData(data) {
@@ -61,9 +62,6 @@ function filterData(data) {
 const newsBtn = document.getElementById('news-btn');
 let selectNewsRange;
 newsBtn.addEventListener("click", () => {
-    setTimeout(function () {
-        alert('Data Added ');
-    }, 2000);
     let news = document.getElementById('news').value;
     selectNewsRange = document.getElementById('selectRange').value;
     let url = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/news/get-";
@@ -83,7 +81,14 @@ const getAllNews = (url, news, method, header) => __awaiter(void 0, void 0, void
     })
         .then(response => response.json())
         .then((response) => {
+        setTimeout(function () {
+            alert('Data Added ');
+        }, 2000);
         filterNews(response);
+    })
+        .catch(err => {
+        console.log("You might not connected to Internet.");
+        alert("You might not connected to Internet.");
     });
 });
 function filterNews(data) {
@@ -94,9 +99,6 @@ function filterNews(data) {
 }
 const treatmentBtn = document.getElementById('treatment-btn');
 treatmentBtn.addEventListener("click", () => {
-    setTimeout(function () {
-        alert('Data Added ');
-    }, 2000);
     let treatment = document.getElementById('treatment').value;
     let url = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/vaccines/get-all-";
     let method = "GET";
@@ -115,10 +117,14 @@ const getTreatmentData = (url, country, method, header) => __awaiter(void 0, voi
     })
         .then(response => response.json())
         .then((response) => {
+        setTimeout(function () {
+            alert('Data Added ');
+        }, 2000);
         filterTreatment(response);
     })
         .catch(err => {
-        console.error(err);
+        console.log("You might not connected to Internet.");
+        alert("You might not connected to Internet.");
     });
 });
 function filterTreatment(data) {
