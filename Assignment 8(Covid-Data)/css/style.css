@@ -4,7 +4,7 @@
 *{ margin: 0; padding: 0; box-sizing: border-box;}
 
 body {
-    background-color: rgb(255, 216, 145 );
+    background-color: rgb(185, 180, 169);
 }
 .container {
     background-color: rgb(0, 100, 139);
@@ -22,7 +22,10 @@ body {
     font-size: 45px;
     font-weight: bold;
     text-align: center;
-    color: white;
+    /* color: white; */
+    -webkit-text-stroke: 3px rgb(255, 255, 255);
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 7px;
     font-family: 'Pacifico', cursive;
     text-decoration: underline;
 }
@@ -34,42 +37,75 @@ body {
 .content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 label {
+    font-weight: bold;
     color: white;
-}
-#country {
-    color: darkblue;
-    font-size: bold;
-    border: none;
-    border-bottom: 2px solid white;
 }
 #search-btn, #news-btn, #treatment-btn {
     padding: 3px 15px;
     cursor: pointer;
     font-weight: bold;
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
     background-color: transparent;
-    border-radius: 20px 0 20px 0;
+    color: white;
+    border-radius: 0 10px;
     margin: 10px;
 }
 #search-btn:hover {
-    background-color: darkblue;
-    border-color: rgb(0, 0, 65);
-    color: rgb(255, 255, 255);
+    /* background-color: darkblue; */
+    /* color: darkblue; */
+    box-shadow: 3px 3px 15px rgb(227, 227, 255);
 }
 #news-btn:hover{
-    background-color: rgb(248, 0, 0);
+    /* background-color: rgb(248, 0, 0);
     border-color: rgb(138, 0, 0);
-    color: rgb(253, 253, 253);
+    color: rgb(253, 253, 253); */
+    box-shadow: 3px 3px 15px rgb(227, 227, 255);
 }
 #treatment-btn:hover {
-    background-color: darkgreen;
+    /* background-color: darkgreen;
     border-color: rgb(0, 46, 0);
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255); */
+    box-shadow: 3px 3px 15px rgb(227, 227, 255);
 }
 .cards {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+#country {
+    /* font-weight: bold; */
+    padding: 5px;
+    text-align: center;
+    width: 120px;
+    border: none;
+    border-radius: 10px 0;
+    margin: auto;
+}
+#news {
+    padding: 5px;
+    text-align: center;
+    width: 120px;
+    border: none;
+    border-radius: 10px 0;
+    margin: auto;
+}
+#treatment {
+    padding: 5px;
+    text-align: center;
+    width: 120px;
+    border: none;
+    border-radius: 10px 0;
+    margin: auto;
+}
+#selectRange {
+    padding: 5px;
+    text-align: center;
+    width: 120px;
+    border: none;
+    border-radius: 10px 0;
+    margin: auto;
 }
