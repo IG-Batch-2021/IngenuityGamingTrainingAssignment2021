@@ -1,7 +1,9 @@
 const newsBtn = <HTMLButtonElement>document.getElementById('news-btn');
+let newsDataCleaner: any = document.querySelector('.newsData');
 let selectNewsRange : any;
 
 newsBtn.addEventListener("click", () => {
+    newsDataCleaner.innerHTML = "";
     let news: string = (<HTMLInputElement>document.getElementById('news')).value;
     selectNewsRange = (<HTMLInputElement>document.getElementById('selectRange')).value;
     
