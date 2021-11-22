@@ -23,7 +23,6 @@ searchBtn.addEventListener("click", () => {
     });
     getAllData(url, countryName, method, header);
     console.log(countryName);
-    console.log(selectRange);
 });
 const getAllData = (url, country, method, header) => __awaiter(void 0, void 0, void 0, function* () {
     let searchURL = url.concat(country);
@@ -53,7 +52,7 @@ function filterData(data) {
             else {
                 length = (selectRange < a.length) ? selectRange : a.length;
             }
-            console.log(a);
+            console.log("You fetch data of " + length + " length.");
             for (let i = 0; i < length; i++) {
                 if (a[i].Country != "Total:")
                     createCard(a[i].Continent, a[i].Country, a[i].TotalCases, a[i].TotalRecovered, a[i].ActiveCases);
@@ -79,6 +78,9 @@ newsBtn.addEventListener("click", () => {
 });
 const getAllNews = (url, news, method, header) => __awaiter(void 0, void 0, void 0, function* () {
     let searchURL = url.concat(news);
+    console.log(url);
+    console.log(news);
+    console.log(searchURL);
     const allNews = yield fetch(searchURL, {
         "method": method,
         "headers": header
@@ -87,7 +89,7 @@ const getAllNews = (url, news, method, header) => __awaiter(void 0, void 0, void
         .then((response) => {
         setTimeout(function () {
             alert('Data Added ');
-        }, 2000);
+        }, 1000);
         filterNews(response);
     })
         .catch(err => {
@@ -96,16 +98,26 @@ const getAllNews = (url, news, method, header) => __awaiter(void 0, void 0, void
     });
 });
 function filterNews(data) {
+    let length;
     console.log(data);
+    if (selectNewsRange == -1) {
+        length = 5;
+    }
+    else {
+        length = (selectNewsRange < data.news.length) ? selectNewsRange : data.news.length;
+    }
+    console.log("You fetch data of " + length + " length.");
     for (let i = 0; i < data.news.length; i++) {
         createNewsCard(data.news[i].title, data.news[i].content, data.news[i].pubDate, data.news[i].reference, data.news[i].link);
     }
 }
 const treatmentBtn = document.getElementById('treatment-btn');
 let treatmentDataCleaner = document.querySelector('.treatementData');
+let selectTreatmentRange;
 treatmentBtn.addEventListener("click", () => {
     treatmentDataCleaner.innerHTML = "";
     let treatment = document.getElementById('treatment').value;
+    selectTreatmentRange = document.getElementById('selectRange').value;
     let url = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/vaccines/get-all-";
     let method = "GET";
     let header = new Headers({
@@ -134,13 +146,27 @@ const getTreatmentData = (url, country, method, header) => __awaiter(void 0, voi
     });
 });
 function filterTreatment(data) {
+    let length;
     printTreatmentData();
     console.log(data);
     function printTreatmentData() {
-        for (let i = 0; i < data.length; i++) {
+        if (selectTreatmentRange == -1) {
+            length = 5;
+        }
+        else {
+            length = (selectTreatmentRange < data.length) ? selectTreatmentRange : data.length;
+        }
+        console.log("You fetch data of " + length + " length.");
+        for (let i = 0; i < length; i++) {
             createTreatmentCard(data[i].category, data[i].description, data[i].funder, data[i].lastUpdated, data[i].nextSteps);
         }
     }
+}
+function createHeading(heading) {
+    let cardHeading = document.createElement('div');
+    cardHeading.setAttribute("class", "cardDataHeading");
+    cardHeading.textContent = heading;
+    covidDataDisplayer.appendChild(cardHeading);
 }
 let covidDataDisplayer = document.querySelector('.covidData');
 function createCard(continent, country, tCasesNumber, tRecoveryNumber, aCasesNumber) {
@@ -242,7 +268,6 @@ function createNewsCard(title, content, pubdate, reference, link) {
     newsCard.appendChild(hr);
     newsCard.appendChild(linkTag);
     newsData.appendChild(newsCard);
-    console.log("News card created.");
     console.log(newsCard);
 }
 function formateDate(date) {
@@ -299,6 +324,5 @@ function createTreatmentCard(category, description, funder, lastUpdated, nextSte
     treatmentCard.appendChild(nextStepsText);
     treatmentCard.appendChild(nextStepsTextContent);
     treatmentData.appendChild(treatmentCard);
-    console.log("treatement data");
 }
 //# sourceMappingURL=app.js.map
