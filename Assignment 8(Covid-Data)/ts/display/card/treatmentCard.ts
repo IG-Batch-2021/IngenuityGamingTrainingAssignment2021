@@ -1,5 +1,4 @@
-let treatmentData = document.createElement('div');
-treatmentData.setAttribute("class", "treatmentData");
+let treatmentData: any = document.querySelector('.treatementData');
 
 function createTreatmentCard(category: string, description: string, funder: string, lastUpdated: string, nextSteps: string): void {
     let treatmentCard = document.createElement('div');
@@ -63,7 +62,6 @@ function createTreatmentCard(category: string, description: string, funder: stri
     treatmentCard.appendChild(nextStepsTextContent);
 
     treatmentData.appendChild(treatmentCard);
-    document.body.appendChild(treatmentData);
 
     console.log("treatement data");
 }
