@@ -1,9 +1,12 @@
 const treatmentBtn = <HTMLButtonElement>document.getElementById('treatment-btn');
 let treatmentDataCleaner: any = document.querySelector('.treatementData');
+let selectTreatmentRange: any;
 
 treatmentBtn.addEventListener("click", () => {
     treatmentDataCleaner.innerHTML = "";
     let treatment: string = (<HTMLInputElement>document.getElementById('treatment')).value;
+    selectTreatmentRange = (<HTMLInputElement>document.getElementById('selectRange')).value;
+
     let url: string = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/vaccines/get-all-";
     let method: string = "GET";
     let header = new Headers({
@@ -41,11 +44,19 @@ const getTreatmentData = async (url: string, country: string, method: string, he
 
 
 function filterTreatment(data: any): void {
+    let length;
+    // createHeading("Treatment Data");
     printTreatmentData();
     console.log(data);
 
     function printTreatmentData() {
-        for(let i=0; i<data.length; i++) {
+        if(selectTreatmentRange == -1) {
+            length = 5;
+        } else {
+            length = (selectTreatmentRange < data.length) ? selectTreatmentRange : data.length;
+        }
+        console.log("You fetch data of "+length+" length.")
+        for(let i=0; i<length; i++) {
             // console.log(data[i].phase);
             createTreatmentCard(data[i].category, data[i].description, data[i].funder, data[i].lastUpdated, data[i].nextSteps);
         }
