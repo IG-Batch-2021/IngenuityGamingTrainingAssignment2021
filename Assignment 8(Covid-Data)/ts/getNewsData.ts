@@ -21,6 +21,9 @@ newsBtn.addEventListener("click", () => {
 
 const getAllNews = async (url: string, news: string, method: string, header: Headers): Promise<any> => {
     let searchURL: string = url.concat(news);
+    console.log(url)
+    console.log(news)
+    console.log(searchURL)
     
     const allNews = await fetch(searchURL, {
         "method": method,
@@ -30,7 +33,7 @@ const getAllNews = async (url: string, news: string, method: string, header: Hea
     .then((response) => {
         setTimeout(function() { 
             alert('Data Added '); 
-        }, 2000);
+        }, 1000);
         filterNews(response);
     })
     .catch(err => {
@@ -41,7 +44,16 @@ const getAllNews = async (url: string, news: string, method: string, header: Hea
 }
 
 function filterNews(data: any): void {
+    let length;
+    // createHeading("News Data");
     console.log(data);
+    if(selectNewsRange == -1) {
+        length = 5;
+    } else {
+        
+        length = (selectNewsRange < data.news.length) ? selectNewsRange : data.news.length;
+    }
+    console.log("You fetch data of "+length+" length.")
     for(let i=0; i<data.news.length; i++) {
         createNewsCard(data.news[i].title, data.news[i].content, data.news[i].pubDate, data.news[i].reference, data.news[i].link);
     }
