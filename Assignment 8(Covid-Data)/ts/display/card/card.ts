@@ -78,7 +78,9 @@ function createCard(continent: string, country: string, tCasesNumber: number, tR
     console.log(newsDataHolder);
 
     covidData.appendChild(card);
-    document.body.appendChild(covidData);
+    
+    let covidDataDisplayer : any = document.querySelector('#covidData');
+    covidDataDisplayer.append(covidData);
 
     console.log("card created.");
     console.log(card);
