@@ -91,10 +91,22 @@ label {
     color: rgb(255, 255, 255); */
     box-shadow: 3px 3px 15px rgb(227, 227, 255);
 }
+.cardHeading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: larger;
+    width: 80%;
+}
 .cards {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    
+    width: 80%;
 }
 
 #country {
