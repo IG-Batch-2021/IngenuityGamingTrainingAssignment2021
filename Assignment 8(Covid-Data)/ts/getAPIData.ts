@@ -2,6 +2,7 @@ const searchBtn = <HTMLButtonElement>document.getElementById('search-btn');
 let covidDataCleaner : any = document.querySelector('.covidData');
 let selectRange: any;
 
+
 searchBtn.addEventListener("click", () => {
     covidDataCleaner.innerHTML = "";
     let countryName: string = (<HTMLInputElement>document.getElementById('country')).value;
@@ -17,7 +18,6 @@ searchBtn.addEventListener("click", () => {
     getAllData(url, countryName, method, header);
 
     console.log(countryName)
-    console.log(selectRange)
 })
 
 const getAllData = async (url: string, country: string, method: string, header: Headers): Promise<any> => {
@@ -44,8 +44,10 @@ const getAllData = async (url: string, country: string, method: string, header: 
 
 function filterData(data: Promise<any>): any {
     let length;
+    // createHeading("Covid Country Data");
     printData();
 
+    
     function printData() {
         data.then((a) => {
             if(selectRange == -1) {
@@ -53,9 +55,8 @@ function filterData(data: Promise<any>): any {
             } else {
                 length = (selectRange < a.length) ? selectRange : a.length;
             }
-            console.log(a);
+            console.log("You fetch data of "+length+" length.")
             for(let i=0; i<length; i++) {
-                // console.log("id: "+a[i].id+" Rank: "+a[i].rank+" ActiveCases: "+a[i].ActiveCases+" Case Fatality Rate: "+a[i].Case_Fatality_Rate+" Continent: "+a[i].Continent+" Contry: "+a[i].Country);
                 if(a[i].Country != "Total:")
                     createCard(a[i].Continent, a[i].Country, a[i].TotalCases, a[i].TotalRecovered, a[i].ActiveCases);
             }
