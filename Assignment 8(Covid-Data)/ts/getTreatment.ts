@@ -1,8 +1,9 @@
 const treatmentBtn = <HTMLButtonElement>document.getElementById('treatment-btn');
+let treatmentDataCleaner: any = document.querySelector('.treatementData');
 
 treatmentBtn.addEventListener("click", () => {
+    treatmentDataCleaner.innerHTML = "";
     let treatment: string = (<HTMLInputElement>document.getElementById('treatment')).value;
-    
     let url: string = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/vaccines/get-all-";
     let method: string = "GET";
     let header = new Headers({
