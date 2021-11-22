@@ -61,7 +61,6 @@ function createNewsCard(title: string, content: string, pubdate: string, referen
 
     newsData.appendChild(newsCard);
 
-    console.log("News card created.");
     console.log(newsCard);
 }
 
