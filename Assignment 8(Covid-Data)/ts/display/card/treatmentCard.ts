@@ -62,6 +62,4 @@ function createTreatmentCard(category: string, description: string, funder: stri
     treatmentCard.appendChild(nextStepsTextContent);
 
     treatmentData.appendChild(treatmentCard);
-
-    console.log("treatement data");
 }
