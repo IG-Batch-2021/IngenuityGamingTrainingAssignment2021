@@ -9,8 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const searchBtn = document.getElementById('search-btn');
+let covidDataCleaner = document.querySelector('.covidData');
 let selectRange;
 searchBtn.addEventListener("click", () => {
+    covidDataCleaner.innerHTML = "";
     let countryName = document.getElementById('country').value;
     selectRange = document.getElementById('selectRange').value;
     let url = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/";
@@ -60,8 +62,10 @@ function filterData(data) {
     }
 }
 const newsBtn = document.getElementById('news-btn');
+let newsDataCleaner = document.querySelector('.newsData');
 let selectNewsRange;
 newsBtn.addEventListener("click", () => {
+    newsDataCleaner.innerHTML = "";
     let news = document.getElementById('news').value;
     selectNewsRange = document.getElementById('selectRange').value;
     let url = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/news/get-";
@@ -98,7 +102,9 @@ function filterNews(data) {
     }
 }
 const treatmentBtn = document.getElementById('treatment-btn');
+let treatmentDataCleaner = document.querySelector('.treatementData');
 treatmentBtn.addEventListener("click", () => {
+    treatmentDataCleaner.innerHTML = "";
     let treatment = document.getElementById('treatment').value;
     let url = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/vaccines/get-all-";
     let method = "GET";
@@ -136,8 +142,7 @@ function filterTreatment(data) {
         }
     }
 }
-let covidData = document.createElement('div');
-covidData.setAttribute("class", "covidData");
+let covidDataDisplayer = document.querySelector('.covidData');
 function createCard(continent, country, tCasesNumber, tRecoveryNumber, aCasesNumber) {
     let card = document.createElement('div');
     card.setAttribute("class", "card");
@@ -188,15 +193,11 @@ function createCard(continent, country, tCasesNumber, tRecoveryNumber, aCasesNum
     card.appendChild(totalCases);
     card.appendChild(totalRecovery);
     card.appendChild(activeCases);
-    const newsDataHolder = document.getElementsByClassName('newsData');
-    console.log(newsDataHolder);
-    covidData.appendChild(card);
-    document.body.appendChild(covidData);
+    covidDataDisplayer.appendChild(card);
     console.log("card created.");
     console.log(card);
 }
-let newsData = document.createElement('div');
-newsData.setAttribute("class", "newsData");
+let newsData = document.querySelector('.newsData');
 function createNewsCard(title, content, pubdate, reference, link) {
     let newsCard = document.createElement('div');
     newsCard.setAttribute("class", "newsCard");
@@ -241,7 +242,6 @@ function createNewsCard(title, content, pubdate, reference, link) {
     newsCard.appendChild(hr);
     newsCard.appendChild(linkTag);
     newsData.appendChild(newsCard);
-    document.body.appendChild(newsData);
     console.log("News card created.");
     console.log(newsCard);
 }
@@ -252,8 +252,7 @@ function formateDate(date) {
     let formatedDate = day + "-" + month + "-" + year;
     return formatedDate;
 }
-let treatmentData = document.createElement('div');
-treatmentData.setAttribute("class", "treatmentData");
+let treatmentData = document.querySelector('.treatementData');
 function createTreatmentCard(category, description, funder, lastUpdated, nextSteps) {
     let treatmentCard = document.createElement('div');
     treatmentCard.setAttribute("class", "treatmentCard");
@@ -300,7 +299,6 @@ function createTreatmentCard(category, description, funder, lastUpdated, nextSte
     treatmentCard.appendChild(nextStepsText);
     treatmentCard.appendChild(nextStepsTextContent);
     treatmentData.appendChild(treatmentCard);
-    document.body.appendChild(treatmentData);
     console.log("treatement data");
 }
 //# sourceMappingURL=app.js.map
