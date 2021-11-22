@@ -1,5 +1,4 @@
-let newsData = document.createElement('div');
-newsData.setAttribute("class", "newsData");
+let newsData: any = document.querySelector('.newsData');
 
 function createNewsCard(title: string, content: string, pubdate: string, reference: string, link: string): void {
     let newsCard = document.createElement('div');
@@ -61,8 +60,6 @@ function createNewsCard(title: string, content: string, pubdate: string, referen
     newsCard.appendChild(linkTag);
 
     newsData.appendChild(newsCard);
-    let newsDataDisplayer: any = document.querySelector('.newsData');
-    newsDataDisplayer.append(newsData);
 
     console.log("News card created.");
     console.log(newsCard);
