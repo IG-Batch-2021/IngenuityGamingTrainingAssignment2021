@@ -1,7 +1,9 @@
 const searchBtn = <HTMLButtonElement>document.getElementById('search-btn');
+let covidDataCleaner : any = document.querySelector('.covidData');
 let selectRange: any;
 
 searchBtn.addEventListener("click", () => {
+    covidDataCleaner.innerHTML = "";
     let countryName: string = (<HTMLInputElement>document.getElementById('country')).value;
     selectRange = (<HTMLInputElement>document.getElementById('selectRange')).value;
     
