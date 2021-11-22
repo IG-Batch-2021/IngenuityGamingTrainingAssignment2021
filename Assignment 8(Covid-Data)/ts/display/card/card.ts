@@ -1,5 +1,5 @@
-let covidData = document.createElement('div');
-covidData.setAttribute("class", "covidData");
+let covidDataDisplayer : any = document.querySelector('.covidData');
+// covidData.setAttribute("class", "covidData");
 
 function createCard(continent: string, country: string, tCasesNumber: number, tRecoveryNumber: number, aCasesNumber: number): void {
     let card = document.createElement('div');
@@ -72,15 +72,8 @@ function createCard(continent: string, country: string, tCasesNumber: number, tR
     card.appendChild(totalCases);
     card.appendChild(totalRecovery);
     card.appendChild(activeCases);
-    // card.appendChild(br);
-
-    const newsDataHolder: any = document.getElementsByClassName('newsData');
-    console.log(newsDataHolder);
-
-    covidData.appendChild(card);
     
-    let covidDataDisplayer : any = document.querySelector('#covidData');
-    covidDataDisplayer.append(covidData);
+    covidDataDisplayer.appendChild(card);
 
     console.log("card created.");
     console.log(card);
