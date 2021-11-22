@@ -99,14 +99,11 @@ label {
     padding: 10px 0;
     font-weight: bold;
     font-size: larger;
-    width: 80%;
 }
 .cards {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    
-    width: 80%;
 }
 
 #country {
