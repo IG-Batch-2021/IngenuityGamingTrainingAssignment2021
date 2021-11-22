@@ -10,8 +10,10 @@ declare const getAllNews: (url: string, news: string, method: string, header: He
 declare function filterNews(data: any): void;
 declare const treatmentBtn: HTMLButtonElement;
 declare let treatmentDataCleaner: any;
+declare let selectTreatmentRange: any;
 declare const getTreatmentData: (url: string, country: string, method: string, header: Headers) => Promise<any>;
 declare function filterTreatment(data: any): void;
+declare function createHeading(heading: string): void;
 declare let covidDataDisplayer: any;
 declare function createCard(continent: string, country: string, tCasesNumber: number, tRecoveryNumber: number, aCasesNumber: number): void;
 declare let newsData: any;
