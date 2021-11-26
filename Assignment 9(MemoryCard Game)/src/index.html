@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tween - GSAP</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: #fafafa;
+        }
+        #game>canvas{
+            border: #afafaf solid 3px;
+            width: 1200px;
+            height: 720px;
+        }
+        #loader{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: rgb(100, 200, 100);
+            z-index: 10;
+        }
+        </style>
+</head>
+<body>
+    <div id="loader"></div>
+    <main id="main">
+        <div id="game">
+            <canvas id="my-canvas" width=400 height=300></canvas>
+        </div>
+    </main>
+</body>
+</html>
