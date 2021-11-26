@@ -3,8 +3,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
+const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -18,23 +17,13 @@ const config = {
   devServer: {
     open: true,
     host: "localhost",
-    port: 8080,
-    compress: true,
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "src/index.html",
-      inject: "body"
+      template: "index.html",
     }),
 
     new MiniCssExtractPlugin(),
-
-    new CopyPlugin({
-      patterns: [
-        { from: "src/assets", to: "assets" },
-      ],
-    }),
 
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
@@ -67,14 +56,10 @@ const config = {
 module.exports = () => {
   if (isProduction) {
     config.mode = "production";
-    config.output.filename = "index.[fullhash].js";
-    config.optimization = {
-      minimize: true,
-    };
+
+    config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
   } else {
     config.mode = "development";
-    config.devtool = "inline-source-map";
-    config.output.filename = "index.[hash].js";
   }
   return config;
 };
