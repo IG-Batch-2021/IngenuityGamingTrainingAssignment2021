@@ -1,0 +1,15 @@
+[
+  {
+    "key": "desyrel",
+    "url": "https://pixijs.io/examples/examples/assets/bitmap-font/desyrel.xml"
+  },
+  {
+    "key": "num",
+    "url": "https://pixijs.io/examples/examples/assets/spritesheet/0123456789.json"
+  },
+  {
+    "key": "fighter",
+    "url": "https://pixijs.io/examples/examples/assets/spritesheet/fighter.json"
+  },
+  { "key": "cards", "url": "assets/cards.gif" }
+]
