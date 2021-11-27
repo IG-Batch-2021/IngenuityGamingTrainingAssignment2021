@@ -9,7 +9,7 @@ window.onload = () => {
   const app = new Application({
     width: 1400,
     height: 1200,
-    backgroundColor: 0x000000,
+    backgroundColor: 0xffffff,
     // resizeTo: window,
     sharedTicker: true,
     sharedLoader: true,
