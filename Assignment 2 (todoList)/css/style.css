@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Qahiri&display=swap');
+body {
+    background: rgb(228, 238, 255);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+    border: 2px solid black;
+}
+.addItems {
+    padding: 15px;
+    margin: 3px;
+    background: rgb(255, 94, 113);
+}
+.addItems .form {
+    margin: 0px 0px 0px 220px;
+}
+.addItems .form label {
+    margin: 65px;
+    font-size: 25px;
+    font-family: 'Permanent Marker', cursive;
+}
+.addItems .form #addItem {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid darkblue;
+    background: transparent;
+    padding: 8px 12px;
+    min-width: 250px;
+    font-size: medium;
+}
+.addItems .form #addItem:focus {
+    background: rgb(248, 253, 253);
+    border-radius: 12px 0px 12px 0px;
+}
+.addItems .form button {
+    padding: 5px 12px;
+    margin-left: 12px;
+    border: 2px solid darkblue;
+    border-radius: 25px;
+    color: darkblue;
+    font-weight: bold;
+    background: transparent;
+    cursor: pointer;
+}
+.addItems .form button:hover {
+    color: white;
+    background-color: darkblue;
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
+.displayItems {
+    padding: 15px;
+    margin: 3px;
+    background: #FCF6F5FF;
+}
+li {
+    /* list-style: none; */
+}
