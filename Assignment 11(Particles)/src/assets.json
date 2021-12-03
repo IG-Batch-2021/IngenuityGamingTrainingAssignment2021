@@ -1,0 +1,26 @@
+[
+  {
+    "key": "redBall",
+    "url": "assets/redBall.png"
+  },
+  {
+    "key": "blueBall",
+    "url": "assets/blueBall.png"
+  },
+  {
+    "key": "gold-coins",
+    "url": "https://pixijs.io/particle-emitter/examples/images/gold_anim.json"
+  },
+  {
+    "key": "snow",
+    "url": "https://pixijs.io/particle-emitter/examples/images/Snow100.png"
+  },
+  {
+    "key": "bubble",
+    "url": "https://pixijs.io/particle-emitter/examples/images/Bubbles99.png"
+  },
+  {
+    "key": "pop",
+    "url": "https://pixijs.io/particle-emitter/examples/images/pop_anim.json"
+  }
+]
