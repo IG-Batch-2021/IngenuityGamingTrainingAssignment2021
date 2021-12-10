@@ -35,7 +35,7 @@ export class Scene extends Container {
     spin.width = 100;
     spin.height = 100;
     this.addChild(spin);
-    console.log('spin ', spin);
+
     const reels = new ReelContainer();
     reels.init();
     this.addChild(reels);
