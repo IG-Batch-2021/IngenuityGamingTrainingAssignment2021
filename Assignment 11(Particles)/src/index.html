@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Particles Assignments</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: #fafafa;
+        overflow: hidden;
+      }
+      #game > canvas {
+        display: block;
+        border: #000000 solid 3px;
+        border-radius: 0 20px;
+        margin: 5px auto;
+      }
+      #loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 5px;
+        background: rgb(100, 200, 100);
+        z-index: 10;
+      }
+      #game {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      #controls {
+        position: absolute;
+        /* top: 0; */
+        bottom: 0px;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: black;
+        justify-content: center;
+      }
+      .btn {
+        padding: 3px 12px;
+        border-radius: 0 5px;
+        margin: 0 10px;
+        cursor: pointer;
+        border: 5px solid white;
+        background-color: transparent;
+        color: white;
+        font-weight: bold ;
+        font-size: 25px;
+      }
+      #start:hover {
+        color: rgb(0, 255, 42);
+        border-color: rgb(0, 255, 42);
+        box-shadow: 0px 5px 12px rgb(116, 255, 139);
+      }
+      #stop:hover {
+        color: red;
+        border-color: red;
+        box-shadow: 0px 5px 12px rgb(255, 133, 133);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader"></div>
+    <main id="main">
+      <div id="game">
+        <canvas id="sketerCanvas"></canvas>
+      </div>
+      <div id="controls">
+        <input type="button" value="Start" id="start" class="btn"/>
+        <input type="button" value="stop" id="stop"  class="btn"/>
+      </div>
+    </main>
+  </body>
+</html>
