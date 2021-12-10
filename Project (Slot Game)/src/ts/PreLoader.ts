@@ -26,7 +26,7 @@ function loadComplete( loader:Loader,
   setResources(resources);
   setTimeout(() => {
     (<HTMLDivElement>document.querySelector('#bar')).style.visibility = 'hidden';
-    (<HTMLDivElement>document.querySelector('#message')).innerHTML = 'Click here to start Game';
+    (<HTMLDivElement>document.querySelector('#message')).innerHTML = 'Click Anywhere in window to start Game';
     const preloader = (<HTMLDivElement>document.querySelector('#preloader'));
     var img=document.createElement("img");
     img.src="src/assets/img/baseGame/startGameScreen.jpg";
