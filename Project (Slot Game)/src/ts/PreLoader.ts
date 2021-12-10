@@ -14,7 +14,6 @@ let progDiv: HTMLDivElement;
 function showProgress(e: any) {
   if (progDiv === undefined) {
     progDiv = document.querySelector('.progress') as HTMLDivElement;
-    console.log('event ');
   }
   // progDiv.style.backgroundColor = 'white';
   progDiv.style.width = `${e.progress}%`;
@@ -37,7 +36,6 @@ function loadComplete( loader:Loader,
 
     preloader.appendChild(img);
     preloader.onclick = (e) => {
-      console.log('event ', e);
       preloader.style.display = 'none';
       onCompleteCallback(loader, resources);
     };
@@ -55,7 +53,6 @@ export function preLoader(
   addAssets(loader, assetList.images);
   loader.onProgress.add(showProgress);
   loader.onComplete.add((l:Loader, res) => {
-    console.warn('loader', l, 'res ', res);
     loadComplete(l, res as any, callback);
   });
   loader.load();
