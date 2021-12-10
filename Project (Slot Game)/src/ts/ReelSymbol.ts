@@ -36,6 +36,5 @@ export class ReelSymbol extends Sprite {
     this.isBlurred = false;
     this.texture = this.normalTexture as Texture;
     this.filters = null;
-    console.log('unblur ', this);
   }
 }
