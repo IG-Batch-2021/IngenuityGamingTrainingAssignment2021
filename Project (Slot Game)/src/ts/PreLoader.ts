@@ -35,7 +35,7 @@ function loadComplete( loader:Loader,
     img.width=window.innerWidth;
 
     preloader.appendChild(img);
-    preloader.onclick = (e) => {
+    preloader.onclick = () => {
       preloader.style.display = 'none';
       onCompleteCallback(loader, resources);
     };
