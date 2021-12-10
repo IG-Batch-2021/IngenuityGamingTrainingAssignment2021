@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Serif", "sans-serif"; 
+}
+body {
+  background-color: black;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  margin: auto;
+}
+
+#preloader {
+  position: fixed;
+  top:0;
+  left:0;
+  background: url("https://th.bing.com/th/id/R.7d8613ee0e6586c85455ac88f5e3cf73?rik=1355%2fokit4Xcgg&riu=http%3a%2f%2fwww.paperhi.com%2fdownload%2fview%3fresolution%3d2560x1440%26file%3dMTkyMHgxMDgwLzIwMTMwMzE3L2NhcnRvb25zIGNhdmUgYW5pbWF0aW9uIGFkdmVudHVyZSB0aW1lIGJhY2tncm91bmRzIHRyZWFzdXJlIGJhY2tncm91bmQgMTkyMHgxMDgwIHdhbGxwYXBlcl93d3cucGFwZXJoaS5jb21fMzIuanBn%26name%3dY2FydG9vbnNfY2F2ZV9hbmltYXRpb25fYWR2ZW50dXJlX3RpbWVfYmFja2dyb3VuZHNfdHJlYXN1cmVfYmFja2dyb3VuZF8xOTIweDEwODBfd2FsbHBhcGVy&ehk=RNXYmmqTmBova6jH4CiDQzwEZDeP6Cr%2fDpG5os7ncTw%3d&risl=&pid=ImgRaw&r=0");
+  // background: url("https://techstory.in/wp-content/uploads/2020/02/Slot-Games.jpg");
+}
+#picture {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#loading {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  width: 80%;
+  height: 20px;
+  margin: auto;
+  margin-left: -40%;
+  overflow: visible;
+  color: white;
+  text-align: center;
+}
+
+#message {
+  font-size: 45px;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  border-radius: 20px;
+  padding: 8px 22px;
+  display: flex;
+  justify-content: center;
+  border: 3px solid black;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+  box-shadow: 0px 0px 15px rgb(0, 0, 0);
+}
+
+$border_size : 2px;
+.progress-bg {
+  position: absolute;
+  top:0;
+  left:0;
+  // background: #2a342a;
+  width:100%;
+  height: 10px;
+  border: #000000 $border_size outset;
+  border-radius: 10px;
+}
+
+.progress {
+  position: absolute;
+  top:$border_size;
+  left:$border_size;
+  background: rgb(5, 207, 214);
+  width:0;
+  height: 20px;
+  border-radius: 10px;
+}
